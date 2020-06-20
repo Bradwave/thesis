@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>slide-3-animation</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+              tex2jax: {
+                inlineMath: [ ['$','$'] ],
+                processEscapes: true
+              }
+        });
+    </script>
+    <script src="complex.js"></script>
+</head>
+
+<style>
+    div.formula {
+        width: 200px;
+        display: inline-block;
+        text-align: center;
+    }
+
+    p.formula {
+        color: #FFFFFF;
+        font-weight: 300;
+        text-align: center;
+    }
+</style>
+
+<body style="padding: 0; margin: 0; overflow: hidden; background-color: #000000;">
+
+    <div id="c0" class="formula">
+        <p class="formula">
+            $$c_0 = r_0 e^{i \theta _{0}}$$
+        </p>
+    </div>
+
+    <div id="c1" class="formula">
+        <p class="formula">
+            $$c_{1} \cdot e_{1}$$
+        </p>
+    </div>
+
+    <div id="c2" class="formula">
+        <p class="formula">
+            $$c_{-1} \cdot e_{-1}$$
+        </p>
+    </div>
+
+    <div id="c3" class="formula">
+        <p class="formula">
+            $$c_{2} \cdot e_{2}$$
+        </p>
+    </div>
+
+    <div id="c4" class="formula">
+        <p class="formula">
+            $$c_{-2} \cdot e_{-2}$$
+        </p>
+    </div>
+
+    <div id="sum" style="display: inline-block; font-weight: 300;">
+        <p class="formula">
+            $ p(t) = \sum_{n=-N}^N c_n \cdot e_n \ , \ \text{dove} \ $
+            <span style="color: #3aa0e4;">
+                $N=$ 2 .
+            </span>
+        </p>
+    </div>
+
+    <script src="s3-animation.js"></script>
+</body>
+
+</html>
