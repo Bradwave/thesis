@@ -20,7 +20,7 @@
 		<div class="slides">
 
 			<!-- SLIDE 1 -->
-			<section class="center"
+			<section class="center" data-transition="zoom-out"
 				data-background-iframe="https://bradwave.github.io/thesis/animations/s1-animation.html">
 				<h5>LA</h5>
 				<h3>SERIE DI FOURIER</h3>
@@ -33,7 +33,8 @@
 				<h6 style="font-weight: 50; font-style: normal; font-size: 30%;">CANDIDATO:</h6>
 				<h6 style="font-size: 48%;">MATTEO BRAMARDI</h6>
 				<h6 style="font-weight: 50; font-style: normal; font-size: 30%; margin-top: 30px;">RELATORE:</h6>
-				<h6 style="font-size: 40%;">PAOLO BOGGIATTO</h6>
+				<h6 style="font-size: 36%; margin-top: 6px; margin-bottom: 1px;">PROF.</h6>
+				<h6 style="font-size: 44%;">PAOLO BOGGIATTO</h6>
 			</section>
 
 			<!-- SLIDE 2 -->
@@ -49,7 +50,7 @@
 				<hr>
 				<br><br>
 				<p>
-					Diciamo <bem class="fragment highlight-blue"> polinomi trigonometrici </bem>
+					Diciamo <bem class="fragment highlight-blue" fragment-speed="slow"> polinomi trigonometrici </bem>
 					le funzioni del tipo
 				<blockquote>
 					$$ p(t) = \sum_{n=-N}^N c_n e^{2 i \pi n \textstyle \frac {t}{a}} \ ,$$
@@ -57,7 +58,7 @@
 						(1.1)
 					</div>
 				</blockquote>
-				<p class="fragment fade-in">
+				<p class="fragment fade-down">
 					dove $a,t \in \mathbb{R}, \ c_n \in \mathbb{C} $.<br>
 					$ p(t) $ ha periodo $ a $ e grado minore o uguale a $ N $.
 				</p>
@@ -82,7 +83,7 @@
 					Denotiamo con $T_n$ lo spazio vettoriale dei polinomi trigonometrici $p(t)$<br>
 					di grado minore o uguale a $N$ dotato del prodotto scalare<br>
 					$$(p,q) = \int_{0}^{a} p(t) \overline{q}(t)dt \ ,$$
-				<p class="fragment fade-in">
+				<p class="fragment fade-down">
 					Poichè $(e_n,e_m)=0$ se $n \neq m$, e $\Vert e_n \Vert_2 = \sqrt{a}$ <br>
 					i vettori $e_n$ sono indipendenti e la dimensione dello spazio è $2N+1$.<br>
 				</p>
@@ -122,9 +123,9 @@
 			</section>
 
 			<!-- Nota storica -->
-			<section>
-				<div style="margin-top: 24%;">
-					<p class="">
+			<section class="center" data-transition="zoom-in zoom-out">
+				<div>
+					<p>
 						In un celebre articolo del 1807, Joseph Fourier afferma che<br>
 						la risposta a tale domanda sia
 					</p>
@@ -145,15 +146,15 @@
 					Introduciamo la notazione
 					$$L_{p}^{2}(0,a) = \left\{ f \ : \ \mathbb R \ \rightarrow \ \mathbb C \ : \
 					f \ \text{ ha periodo $a$ e } \int_{0}^{a}|f(t)|^2dt \lt -\infty \right\}$$
-				<p class="fragment fade-in">
+				<p class="fragment fade-down">
 					Questo insieme, dotato delle usuali operazioni, è uno
 					<bem class="fragment highlight-blue">spazio vettoriale</bem>.<br>
 				</p>
-				<p class="fragment fade-in">
+				<p class="fragment fade-down">
 					Definiamo il prodotto scalare su questo insieme
 					$$(f,g) = \int_{0}^{a} f(t) \overline{g}(t)dt \ ,$$
 				</p>
-				<div class="fragment fade-in">
+				<div class="fragment fade-down">
 					<p>
 						e la norma associata
 						$$ \Vert f \Vert_2 = \left( \int_{0}^{a} |f(t)|^2 dt \right) ^{\textstyle \frac{1}{2}}$$
@@ -173,22 +174,22 @@
 				<p>
 					Dato $N \in \mathbb N$, è possibile trovari dei coefficienti $x_n$ tali che<br>
 					$$ \Vert \ f - \sum_{n=-N}^{N} x_n e_n \ \Vert _{2} \ \text{ sia minimo?}$$
-				<p class="fragment fade-in">
+				<p class="fragment fade-down">
 					Ciò corrisponde a trovare l'elemento $f_N$ nel sottospazio $T_n$ di $L_{p}^{2}(0,a)$
 					che ha la minima<br>
 					distanza da $f$. Se esiste, lo chiamiamo la
 					<bem class="fragment highlight-blue">migliore approssimazione</bem>
 					di $f$ in $T_{n}$.<br><br>
 				</p>
-				<p class="fragment fade-in">
+				<p class="fragment fade-down">
 					Occorre quindi valutare la distanza tra $f$ e un arbitrario polinomio trigonometrico in
 					$T_{n}$.<br>
 				</p>
-				<p class="fragment fade-in">
+				<p class="fragment fade-down">
 					Con opportuni calcoli, troviamo
 					$$ \Vert f - p \Vert _{2}^{2} = \Vert f \Vert _{2}^{2}
 					+ a \sum_{n=-N}^{N} ( | c_n - x_n |^{2} - | c_n |^2 ) $$
-				<p class="fragment fade-in">
+				<p class="fragment fade-down">
 					per cui il minimo è ottenuto quando $x_n=c_n$.
 				</p>
 				</p>
@@ -198,18 +199,18 @@
 			<!-- Teorema -->
 			<section data-auto-animate>
 				<div style="margin-top: 4%;">
-					<blockquote style="border-color: #06e96c; width: 80%;" data-id="theorem-block">
+					<blockquote style="border-color: #06e96c; width: 80%;" data-id="block">
 						<b style="font-style: normal; font-size: 28px;">2.2.1 Teorema</b><br><br>
 						Esiste un unico polinomio trigonometrico $f_N$ in $T_n$ tale che
 						$$ \Vert f - f_N \Vert _{2} = \min_{p \in T_N} \Vert f - p \Vert _{2} $$
-						<div class="fragment fade-in">
+						<div class="fragment fade-down">
 							Questo polinomio è dato da
 							$$ f_N(t) = \sum_{n=-N}^{N} c_n e^{2 i \pi n \textstyle \frac {t}{a}} \ , $$
 							<div class="number" style="color: #06e96c8c;">
 								(2.1)
 							</div>
 						</div>
-						<div class="fragment fade-in">
+						<div class="fragment fade-down">
 							dove
 							$$ c_n=\frac{1}{a} \int_{0}^{a}p(t)e^{2 i \pi n \textstyle \frac {t}{a}}dt \ . $$
 							<div class="number" style="color: #06e96c8c;">
@@ -223,18 +224,16 @@
 			<!-- Corollario -->
 			<section data-auto-animate>
 				<div style="margin-top: 15%;">
-					<blockquote style="border-color: #06e96c; width: 80%;" data-id="theorem-block">
-						<div class="fragment fade-in">
-							<b style="font-style: normal; font-size: 28px;">2.2.2 Corollario</b>
-						</div>
-						<br><br>
-						<div class="fragment fade-in">
+					<blockquote style="border-color: #06e96c; width: 80%;" data-id="block">
+						<div class="fragment fade-down">
+							<div style="font-style: normal; font-size: 28px;">
+								<b>2.2.2 Corollario</b>
+							</div>
+							<br>
 							Per qualunque $f \in L_{p}^{2}(0,a) \ $, abbiamo la disuguaglianza
-						</div>
-						<div class="fragment fade-in">
 							$$ f_N(t) = \sum_{n=-\infty}^{\infty} |c_n|^{2} \lt \infty \ , $$
 						</div>
-						<div class="fragment fade-in">
+						<div class="fragment fade-down">
 							e quindi
 							$$ c_n(f) \rightarrow 0 \ \text{ per } \ |n| \rightarrow + \infty \ . $$
 						</div>
@@ -244,21 +243,44 @@
 
 			<!-- Convergenza -->
 			<section data-background-iframe="https://bradwave.github.io/thesis/animations/s4-animation.html"
-				data-preload>
+				data-preload data-auto-animate>
 				<h4>2.3 Convergenza dell'approssimazione $ $</h4>
 				<hr>
-				<p>
+				<p style="margin-top: -1%;">
 					Cosa succede a $f_N$ per $N \rightarrow + \infty$ ?
 				</p>
-				</p>
+				<blockquote
+					style="border-color: #e9c706; width: 80%; margin-top: 5px; margin-bottom: 5px; position: relative;"
+					data-id="block">
+					<div class="fragment fade-down" data-fragment-index="2"
+						style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;">
+						$$ \text{approssimata da: } \ \ \ f_N(t)=\frac{4}{\pi} \left( sin(t) + \frac{1}{3}sin(3t) +
+						\frac{1}{3}sin(5t) + ...
+						\right) $$
+					</div>
+					<div class="fragment fade-down" data-fragment-index="1">
+						<div class="fragment fade-out" data-fragment-index="2"
+							style="position: relative; margin-left: auto; margin-right: auto; left: 0; right: 0;">
+							$$ \textit{Esempio: } \ \ \ f(t) =
+							\begin{cases}
+							+1, & \text{se $ \ 0 \le t \lt \pi $} \\
+							-1, & \text{se $ \ \pi \le t \lt 2 \pi $}
+							\end{cases} $$
+						</div>
+					</div>
+				</blockquote>
 			</section>
 
 			<!-- Teorema -->
-			<section data-auto-animate="">
+			<section data-auto-animate>
 				<div style="margin-top: 4%;">
 					<blockquote style="border-color: #06e96c; width: 80%;" data-id="block">
-						<b style="font-style: normal; font-size: 28px;">2.3.1 Teorema</b><br><br>
-						<div class="fragment fade-in">
+						<div class="fragment fade-down">
+							<b style="font-style: normal; font-size: 28px;">
+								2.3.1 Teorema</b>
+						</div>
+						<br>
+						<div class="fragment fade-down">
 							Se $f \in L_{p}^{2}(0,a) \ $, allora la miglior approssimazione di $f$ in $T_N$, che è data
 							da
 							$$f_N=\sum_{n=-N}^{N} c_n e^{2 i \pi n \textstyle \frac {t}{a}} \ , $$
@@ -268,10 +290,10 @@
 							</span>
 							,
 						</div>
-						<div class="fragment fade-in" style="margin-top: 20px;">
+						<div class="fragment fade-down" style="margin-top: 20px;">
 							tende a $f$ in $L_{p}^{2}(0,a)$ per $N \rightarrow + \infty$.
 						</div>
-						<div class="fragment fade-in" style="margin-top: 30px;">
+						<div class="fragment fade-down" style="margin-top: 30px;">
 							Oppure, equivalentemente,
 							$$ \int_{0}^{a} |f(t)-f_N(t)|^2 dt \rightarrow 0 \text{ per } N \rightarrow + \infty \ .$$
 						</div>
@@ -279,25 +301,52 @@
 				</div>
 			</section>
 
-			<!-- Spazio Tn e formula di Fourier-->
+			<!-- Conclusioni -->
 			<section data-auto-animate>
-				<h4>1.2 Spazio $T_n$</h4>
+				<h4>2.3 Convergenza dell'approssimazione $ $</h4>
 				<hr>
 				<br><br>
 				<p>
 					In conclusione, possiamo scrivere
 				</p>
 				<blockquote data-id="block">
-					<div class="fragment fade-in">
+					<div class="fragment fade-down">
 						$$ f(t) = \sum_{n= - \infty}^{+ \infty} c_n e^{2 i \pi n \textstyle \frac {t}{a}} \ .$$
 						<div class="number">
 							(2.3)
 						</div>
 					</div>
 				</blockquote>
-
 			</section>
 
+			<!-- Osservazioni -->
+			<section>
+				<h4>2.3.1 Osservazioni $ $</h4>
+				<hr>
+				<br>
+				<p>La formula
+					<span style="font-weight: bold; font-style: normal; color: #068de9;">
+						(2.2)
+					</span>
+					è un'equivalenza nella norma di $L_{p}^{2}(0,a)$.<br>
+					In particolare, non significa che per qualunque valore di $t$,<br>
+					il valore di $f(t)$ sia uguale alla somma della serie.<br>
+				</p>
+				<p class="fragment fade-down" style="margin-top: 3em;">Inoltre, il <strong>teorema 2.3.1</strong> può
+					essere riformulato dicendo che<br>
+					la famiglia di funzioni $(e_n)_{n \in \mathbb{Z}} $ è una <em>base topologica</em>
+					per lo spazio $L_{p}^{2}(0,a)$<br>
+					$$ \text{e che la serie} \ \ \sum_{n= - \infty}^{+ \infty} c_n e_n \ \
+					\text{è sommabile a $f$ in questo spazio.} $$
+				</p>
+			</section>
+
+			<!-- La convergenza puntuale -->
+			<section class="center">
+				<h6>
+					Occorre pertanto
+				</h6>
+			</section>
 
 		</div>
 	</div>
@@ -316,6 +365,7 @@
 			hash: true,
 			center: false,
 			transition: 'fade',
+			transitionSpeed: 'slow',
 			backgroundTransition: 'fade',
 
 			math: {

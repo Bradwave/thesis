@@ -1,5 +1,7 @@
 let t = 0;
+let tInc = 0;
 let path = [];
+let remove = false;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -7,8 +9,11 @@ function setup() {
 
 function windowResized() {
   path = [];
-  resizeCanvas(windowWidth, windowHeight); 
-} 
+  tInc = t % TWO_PI;
+  console.log(tInc);
+  remove = false;
+  resizeCanvas(windowWidth, windowHeight);
+}
 
 function draw() {
   background(0);
@@ -49,24 +54,34 @@ function draw() {
   v3 = createVector(x3, y3);
   line(v2.x, v2.y, v3.x, v3.y);
 
-  strokeWeight(6);
-  stroke(60);
-  point(v3.x, v3.y);
-
   path.unshift(v3);
 
   beginShape();
   noFill();
-  strokeWeight(2);
-  for (let i = 0; i < path.length; i ++) {
-    vertex(path[i].x, path[i].y);
+  strokeWeight(3);
+  for (let i = 0; i < path.length - 1; i++) {
+    let lineColor = lerpColor(color(66, 175, 250), color(100), i / path.length);
+    if (i < 6) {
+      lineColor = lerpColor(lineColor, color(0), 1 - 0.8 * i / 5);
+    }
+    stroke(lineColor.levels[0], lineColor.levels[1], lineColor.levels[2],
+      255 * (-Math.pow(i / path.length, 2) + 1));
+    line(path[i].x, path[i].y, path[i + 1].x, path[i + 1].y);
   }
   endShape();
-  
+
+  strokeWeight(7);
+  stroke(66, 175, 250);
+  point(v3.x, v3.y);
+
   t += 0.01;
 
-  if(t > TWO_PI){
-    t = 0;
-    path = [];
+  if (t > TWO_PI + tInc) {
+    t = tInc;
+    remove = true;
+  }
+
+  if (remove) {
+    path.pop();
   }
 }

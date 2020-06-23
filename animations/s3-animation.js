@@ -34,10 +34,9 @@ let polynomial = [];
 let maxStep;
 
 // wheel scroll
-const scrollInc = 1;
-let minPos = 0;
-let maxPos = 4 * scaleFactor;
-let pos = minPos;
+const MIN_POS = 0;
+const MAX_POS = 400;
+let pos = MIN_POS;
 let oldPos = pos;
 let newPos;
 let trInc = 0;
@@ -51,23 +50,56 @@ let cs = {
 
 // progress bar
 let barTimer = 0;
-const barMaxTime = 120;
+const BAR_MAX_TIME = 120;
 let barGradTimer = 0;
-const barGradMaxTime = 120;
+const BAR_GRAD_MAX_TIME = 120;
 let anTimer = 0;
-const anMaxTime = 30;
+const AN_MAX_TIME = 30;
 
-let barHeight = 2 * scaleFactor;
+let barHeight = 240;
+const BAR_WIDTH = 8;
 let progressHeight;
-let barYOffest = 2.3 * scaleFactor;
+let barYOffset = 240;
+let barXOffset = 55;
 
-// mouse icon
+/// mouse icon
 let mwIcon;
-let mwIconGlow;
+let arrowUp;
+let arrowDown;
+let wheelGlow;
+let arrowUpGlow;
+let arrowDownGlow;
 
-function preload() {
-  mwIcon = loadImage('https://bradwave.github.io/fourier-series/animations/icons/mw-icon.png');
-  mwIconGlow = loadImage('https://bradwave.github.io/fourier-series/animations/icons/mw-icon-glow.png');
+let imgX;
+let imgY;
+let mwIconWidth;
+let mwIconHeight;
+
+let imgsLink = 'https://bradwave.github.io/fourier-series/animations/icons/';
+
+function loadIcons() {
+  mwIcon = loadImage(imgsLink + 'mw-icon.png', function () {
+    mwIcon.resize(0, mwIconHeight);
+    mwIconHeight = windowHeight / 6;
+    mwIconWidth = mwIconHeight * mwIcon.width / mwIcon.height;
+    imgX = windowWidth / 2 - barXOffset - mwIconWidth / 2 + BAR_WIDTH / 2;
+    imgY = windowHeight / 2 - barYOffset + 5;
+  });
+  arrowUp = loadImage(imgsLink + 'arrow-up.png', function () {
+    arrowUp.resize(0, mwIconHeight);
+  });
+  arrowDown = loadImage(imgsLink + 'arrow-down.png', function () {
+    arrowDown.resize(0, mwIconHeight);
+  });
+  wheelGlow = loadImage(imgsLink + 'wheel-glow.png', function () {
+    wheelGlow.resize(0, mwIconHeight);
+  });
+  arrowUpGlow = loadImage(imgsLink + 'arrow-up-glow.png', function () {
+    arrowUpGlow.resize(0, mwIconHeight);
+  });
+  arrowDownGlow = loadImage(imgsLink + 'arrow-down-glow.png', function () {
+    arrowDownGlow.resize(0, mwIconHeight);
+  });
 }
 
 function setup() {
@@ -97,12 +129,14 @@ function setup() {
   sumFormula = select('#sum');
   sumFormula.style('display:none');
 
+  loadIcons();
   updateGraphics();
 }
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 
+  loadIcons();
   setOrigin();
   updateGraphics();
 }
@@ -152,17 +186,17 @@ function toSecondaryScreenCoord(x, y, pos) {
 function mouseWheel(event) {
   // progress bar gradient
   if (barTimer < 1) {
-    anTimer = anMaxTime;
+    anTimer = AN_MAX_TIME;
   }
-  barTimer = barMaxTime;
-  barGradTimer = barGradMaxTime;
+  barTimer = BAR_MAX_TIME;
+  barGradTimer = BAR_GRAD_MAX_TIME;
 
   // position
-  newPos = (pos + event.delta);
-  if (newPos < minPos) {
-    newPos = minPos;
-  } else if (newPos > maxPos) {
-    newPos = maxPos;
+  newPos = pos - event.delta;
+  if (newPos <= MIN_POS) {
+    newPos = MIN_POS;
+  } else if (newPos >= MAX_POS) {
+    newPos = MAX_POS;
   }
   trInc = Math.abs(newPos - pos);
 }
@@ -193,11 +227,18 @@ function updateGraphics() {
 
 
   // progress bar
-  barHeight = 2 * scaleFactor;
-  barYOffest = 2.3 * scaleFactor;
+  barHeight = windowHeight / 3;
+  barYOffset = windowHeight / 3;
+  barXOffset = windowWidth / 40 + 25;
+
+  // icons;
+  mwIconHeight = windowHeight / 6;
+  mwIconWidth = mwIconHeight * mwIcon.width / mwIcon.height;
+  imgX = windowWidth / 2 - barXOffset - mwIconWidth / 2 + BAR_WIDTH / 2;
+  imgY = windowHeight / 2 - barYOffset + 5;
 }
 
-function drawPolinomial() {
+function drawPolynomial() {
 
   let p = new Complex([0, 0]);
   let ps = toScreenCoord(p.re, p.im);
@@ -305,41 +346,61 @@ function drawProgressBar() {
   if (barTimer > 0) {
     barTimer--;
     if (anTimer > 0) {
-      alpha = 255 - 255 * anTimer / anMaxTime;
+      alpha = 255 - 255 * anTimer / AN_MAX_TIME;
       anTimer--;
     }
   } else {
     if (barGradTimer > 0) {
       barGradTimer--;
     }
-    alpha = 255 * barGradTimer / barMaxTime;
+    alpha = 255 * barGradTimer / BAR_MAX_TIME;
   }
 
   fill(100, alpha);
-  arc(windowWidth / 2 - 51, windowHeight / 2 - barHeight - barYOffest + 4, 8, 8, PI, 0);
-  arc(windowWidth / 2 - 51, windowHeight / 2 - barYOffest - 4, 8, 8, 0, PI);
-  rect(windowWidth / 2 - 55, windowHeight / 2 - barHeight - barYOffest + 4, 8, barHeight - 8);
+  arc(windowWidth / 2 - barXOffset + BAR_WIDTH / 2, windowHeight / 2 - barHeight - barYOffset + BAR_WIDTH / 2,
+    BAR_WIDTH, BAR_WIDTH, PI, 0);
+  arc(windowWidth / 2 - barXOffset + BAR_WIDTH / 2, windowHeight / 2 - barYOffset - BAR_WIDTH / 2,
+    BAR_WIDTH, BAR_WIDTH, 0, PI);
+  rect(windowWidth / 2 - barXOffset, windowHeight / 2 - barHeight - barYOffset + BAR_WIDTH / 2,
+    BAR_WIDTH, barHeight - BAR_WIDTH);
 
   fill(255, alpha);
 
-  progressHeight = (pos + 20) / (maxPos + 20) * barHeight;
-  arc(windowWidth / 2 - 51, windowHeight / 2 - progressHeight - barYOffest + 4, 8, 8, PI, 0);
-  arc(windowWidth / 2 - 51, windowHeight / 2 - barYOffest - 4, 8, 8, 0, PI);
-  rect(windowWidth / 2 - 55, windowHeight / 2 - progressHeight - barYOffest + 4, 8, progressHeight - 8);
+  progressHeight = Math.abs((pos + 20) / (MAX_POS + 20)) * barHeight;
+  arc(windowWidth / 2 - barXOffset + BAR_WIDTH / 2, windowHeight / 2 - progressHeight - barYOffset + 4,
+    BAR_WIDTH, BAR_WIDTH, PI, 0);
+  arc(windowWidth / 2 - barXOffset + BAR_WIDTH / 2, windowHeight / 2 - barYOffset - BAR_WIDTH / 2,
+    BAR_WIDTH, BAR_WIDTH, 0, PI);
+  rect(windowWidth / 2 - barXOffset, windowHeight / 2 - progressHeight - barYOffset + BAR_WIDTH / 2,
+    BAR_WIDTH, progressHeight - BAR_WIDTH);
 }
 
 function drawMouseIcon() {
-  push();
+  let oscillation = 0.5 * (1 + sin(4 * t));
 
-  scale(0.2);
-  translate((windowWidth / 2 - 82) * 5, (windowHeight / 2 - barYOffest + 5) * 5);
+  // mouse icon + wheel
+  tint(255, 255);
+  image(mwIcon, imgX, imgY);
 
-  tint(255, 200);
-  image(mwIcon, 0, 0)
-  tint(255, 0.5 * (1 + sin(4 * t)) * 255);
-  image(mwIconGlow, 0, 0)
+  // arrow up
+  if (pos > MIN_POS) {
+    tint(255, 255);
+    image(arrowUp, imgX, imgY - oscillation * 5);
+    tint(255, oscillation * 255);
+    image(arrowUpGlow, imgX, imgY - oscillation * 5);
+  }
 
-  pop();
+  // arrow down
+  if (pos < MAX_POS) {
+    tint(255, 255);
+    image(arrowDown, imgX, imgY + oscillation * 5);
+    tint(255, oscillation * 255);
+    image(arrowDownGlow, imgX, imgY + oscillation * 5);
+  }
+
+  // wheel glow
+  tint(255, oscillation * 255);
+  image(wheelGlow, imgX, imgY);
 }
 
 function draw() {
@@ -383,7 +444,7 @@ function draw() {
   }
 
   // POLYNOMIAL
-  drawPolinomial();
+  drawPolynomial();
 
   // PROGRESS BAR
   drawProgressBar();

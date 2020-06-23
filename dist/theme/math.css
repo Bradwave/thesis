@@ -110,7 +110,7 @@ body {
   font-size: 0.8em;
   font-weight: bold;
   font-style: normal;
-  color: #068ee98c;
+  color: #068ee9c7;
 }
 
 .reveal textarea {
@@ -171,6 +171,7 @@ body {
 }
 
 .reveal ol {
+  font-size: 24px;
   list-style-type: decimal;
 }
 
@@ -372,4 +373,39 @@ body {
   .backgrounds {
     background-color: #191919;
   }
+}
+
+/*********************************************
+ * ANIMATIONS
+ *********************************************/
+
+.reveal .slides section .fragment.highlight-blue {
+  transition: all .8s ease;
+}
+
+.reveal .slides section .fragment.fade-down {
+  transform: translate(0, -10px);
+  transition: all .6s ease;
+}
+
+.reveal .slides section .fragment.fade-in {
+  transition: all .5s ease;
+}
+
+.reveal .slides>section[data-transition=zoom].past, .reveal .slides>section[data-transition~=zoom-out].past, .reveal.zoom .slides>section:not([data-transition]).past {
+  visibility: hidden;
+  transform: scale(2);
+  transition: all 1.4s ease;
+}
+
+.reveal .slides>section[data-transition=zoom].past, .reveal .slides>section[data-transition~=zoom-backout].past, .reveal.zoom .slides>section:not([data-transition]).past {
+  visibility: hidden;
+  transform: scale(0.5);
+  transition: all 1.4s ease;
+}
+
+.reveal .slides>section[data-transition=zoom].future, .reveal .slides>section[data-transition~=zoom-in].future, .reveal.zoom .slides>section:not([data-transition]).future {
+  visibility: hidden;
+  transform: scale(0.5);
+  transition: all 1.4s ease;
 }
