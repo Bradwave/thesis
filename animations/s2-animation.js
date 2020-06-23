@@ -62,29 +62,13 @@ let mwIconHeight;
 
 let imgsLink = 'https://bradwave.github.io/thesis/animations/icons/';
 
-function loadIcons() {
-  mwIcon = loadImage(imgsLink + 'mw-icon.png', function () {
-    mwIcon.resize(0, mwIconHeight);
-    mwIconHeight = windowHeight / 6;
-    mwIconWidth = mwIconHeight * mwIcon.width / mwIcon.height;
-    imgX = windowWidth - barXOffset - mwIconWidth / 2 + BAR_WIDTH / 2;
-    imgY = windowHeight - barYOffset + 5;Z
-  });
-  arrowUp = loadImage(imgsLink + 'arrow-up.png', function () {
-    arrowUp.resize(0, mwIconHeight);
-  });
-  arrowDown = loadImage(imgsLink + 'arrow-down.png', function () {
-    arrowDown.resize(0, mwIconHeight);
-  });
-  wheelGlow = loadImage(imgsLink + 'wheel-glow.png', function () {
-    wheelGlow.resize(0, mwIconHeight);
-  });
-  arrowUpGlow = loadImage(imgsLink + 'arrow-up-glow.png', function () {
-    arrowUpGlow.resize(0, mwIconHeight);
-  });
-  arrowDownGlow = loadImage(imgsLink + 'arrow-down-glow.png', function () {
-    arrowDownGlow.resize(0, mwIconHeight);
-  });
+function preload() {
+  mwIcon = loadImage(imgsLink + 'mw-icon.png');
+  arrowUp = loadImage(imgsLink + 'arrow-up.png');
+  arrowDown = loadImage(imgsLink + 'arrow-down.png');
+  wheelGlow = loadImage(imgsLink + 'wheel-glow.png');
+  arrowUpGlow = loadImage(imgsLink + 'arrow-up-glow.png');
+  arrowDownGlow = loadImage(imgsLink + 'arrow-down-glow.png');
 }
 
 function setup() {
@@ -114,7 +98,6 @@ function setup() {
   sumFormula = { sum: select('#sum'), maxIndex: select('#maxIndex') };
   sumFormula.sum.style('display:none');
 
-  loadIcons();
   updateGraphics();
   updateProgressBar();
 }
@@ -123,7 +106,6 @@ function windowResized() {
   path = [];
   resizeCanvas(windowWidth, windowHeight);
 
-  loadIcons();
   setOrigin();
   updateGraphics();
   updateProgressBar();
@@ -222,7 +204,6 @@ function updateProgressBar() {
   barXOffset = windowWidth / 40 + 25;
 
   // icons
-
   mwIconHeight = windowHeight / 6;
   mwIconWidth = mwIconHeight * mwIcon.width / mwIcon.height;
   imgX = windowWidth - barXOffset - mwIconWidth / 2 + BAR_WIDTH / 2;
@@ -337,27 +318,27 @@ function drawMouseIcon() {
 
   // mouse icon + wheel
   tint(255, 255);
-  image(mwIcon, imgX, imgY);
+  image(mwIcon, imgX, imgY, mwIconWidth, mwIconHeight);
 
   // arrow up
   if (pos > - SCROLL_INC * (maxStep + 1)) {
     tint(255, 200);
-    image(arrowUp, imgX, imgY - oscillation * 5);
+    image(arrowUp, imgX, imgY - oscillation * 5, mwIconWidth, mwIconHeight);
     tint(255, oscillation * 255);
-    image(arrowUpGlow, imgX, imgY - oscillation * 5);
+    image(arrowUpGlow, imgX, imgY - oscillation * 5, mwIconWidth, mwIconHeight);
   }
 
   // arrow down
   if (pos < - SCROLL_INC) {
     tint(255, 200);
-    image(arrowDown, imgX, imgY + oscillation * 5);
+    image(arrowDown, imgX, imgY + oscillation * 5, mwIconWidth, mwIconHeight);
     tint(255, oscillation * 255);
-    image(arrowDownGlow, imgX, imgY + oscillation * 5);
+    image(arrowDownGlow, imgX, imgY + oscillation * 5, mwIconWidth, mwIconHeight);
   }
 
   // wheel glow
   tint(255, oscillation * 255);
-  image(wheelGlow, imgX, imgY);
+  image(wheelGlow, imgX, imgY, mwIconWidth, mwIconHeight);
 
   /* TEST RECTANGLE *
   stroke(200);
