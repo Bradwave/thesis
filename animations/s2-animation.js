@@ -60,7 +60,7 @@ let imgY;
 let mwIconWidth;
 let mwIconHeight;
 
-let imgsLink = 'https://bradwave.github.io/fourier-series/animations/icons/';
+let imgsLink = 'https://bradwave.github.io/thesis/animations/icons/';
 
 function loadIcons() {
   mwIcon = loadImage(imgsLink + 'mw-icon.png', function () {

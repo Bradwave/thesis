@@ -75,7 +75,7 @@ let imgY;
 let mwIconWidth;
 let mwIconHeight;
 
-let imgsLink = 'https://bradwave.github.io/fourier-series/animations/icons/';
+let imgsLink = 'https://bradwave.github.io/thesis/animations/icons/';
 
 function loadIcons() {
   mwIcon = loadImage(imgsLink + 'mw-icon.png', function () {
@@ -383,7 +383,7 @@ function drawMouseIcon() {
   image(mwIcon, imgX, imgY);
 
   // arrow up
-  if (pos > MIN_POS) {
+  if (pos < MAX_POS) {
     tint(255, 255);
     image(arrowUp, imgX, imgY - oscillation * 5);
     tint(255, oscillation * 255);
@@ -391,7 +391,7 @@ function drawMouseIcon() {
   }
 
   // arrow down
-  if (pos < MAX_POS) {
+  if (pos > MIN_POS) {
     tint(255, 255);
     image(arrowDown, imgX, imgY + oscillation * 5);
     tint(255, oscillation * 255);
