@@ -10,7 +10,6 @@ function setup() {
 function windowResized() {
   path = [];
   tInc = t % TWO_PI;
-  console.log(tInc);
   remove = false;
   resizeCanvas(windowWidth, windowHeight);
 }

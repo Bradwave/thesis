@@ -7,9 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <title>slide-4-animation</title>
+
+    <link rel="stylesheet" href="theme/animations.css">
+</head>
+
+<body class="animation">
+
+    <div id="sumN" class="formula" style="margin-top: 10px;">
+        $ N= $ <span id="fIndex">0</span>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
     <script type="text/javascript" async
         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
         </script>
@@ -21,33 +30,11 @@
               }
         });
     </script>
-    <script src="complex.js"></script>
-</head>
 
-<style>
-    div.formula {
-        width: 200px;
-        display: inline-block;
-        text-align: center;
-    }
-
-    p.formula {
-        color: #FFFFFF;
-        font-weight: 300;
-        font-size: 1.2em;
-        text-align: center;
-    }
-</style>
-
-<body style="padding: 0; margin: 0; overflow: hidden; background-color: #000000;">
-
-    <div id="SumN" class="formula">
-        <p class="formula">
-            $ N= $ <span id="fIndex">0</span>
-        </p>
-    </div>
-
-    <script src="s4-animation.js"></script>
+    <script src="src/js/utils/complex.js"></script>
+    <script src="src/js/utils/coordinateSystem.js"></script>
+    <script src="src/js/utils/progressGraphics.js"></script>
+    <script src="src/js/s4-animation.js"></script>
 </body>
 
 </html>
