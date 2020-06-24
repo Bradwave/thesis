@@ -17,7 +17,7 @@ let descaleFactor = 1.000000 / scaleFactor;
 let x2Origin;
 let y2Origin;
 
-let suvdivNumber = 1;
+let subdivNumber = 1;
 let distance = 100;
 let secScaleFactor = 40;
 let secDescaleFactor = 1.000000 / secScaleFactor;
@@ -30,7 +30,7 @@ let yfOrigin;
  * Set the origin of the cartesian coordinate system according to the canvas size.
  * Set the coordinate system for the canvas and the number of subdivision of the secondary coordinate system.
  * @param {Number} coordSystem Coordinate system for the canvas: 0 for cartesian, 1 for screen system.
- * @param {Number} subdivNumber Number of subdivision of the secondary coordinate system.
+ * @param {Number} sdn Number of subdivision of the secondary coordinate system.
  */
 function setOrigin(s, sdn = 1) {
     coordSystem = s;

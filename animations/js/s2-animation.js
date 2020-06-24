@@ -93,7 +93,7 @@ function updateGraphics() {
   // formulas
   for (let i = 0; i < step; i++) {
     formulas[i].style('display:inline-block;');
-    formulas[i].style('font-size:1.2em');
+    formulas[i].style('font-size:22px');
 
     let fWidth = formulas[i].elt.offsetWidth;
     formulas[i].position(x2Origin + polynomial[i].freq * distance - fWidth / 2,
@@ -105,7 +105,7 @@ function updateGraphics() {
 
   if (step > 1) {
     sumFormula.sum.style('display:inline-block');
-    sumFormula.sum.style('font-size:1.2em')
+    sumFormula.sum.style('font-size:22px')
     sumFormula.maxIndex.html(`${Math.trunc(step / 2)}`);
 
     let fWidth = Math.trunc(sumFormula.sum.elt.offsetWidth);

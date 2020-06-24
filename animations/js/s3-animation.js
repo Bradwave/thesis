@@ -57,8 +57,6 @@ function setup() {
     formulas.push(formula);
   }
 
-  maxStep = polynomial.length;
-
   sumFormula = select('#sum');
   sumFormula.style('display:none');
 
@@ -100,15 +98,16 @@ function updateGraphics() {
   // formulas
   for (let i = 0; i < maxStep; i++) {
     formulas[i].style('display:inline-block');
-    formulas[i].style('font-size:1.2em');
+    formulas[i].style('font-size:22px');
 
     let fWidth = formulas[i].elt.offsetWidth;
+    console.log('!!', formulas[4].elt.offsetWidth);
     formulas[i].position(xfOrigin + polynomial[i].freq * distance - fWidth / 2,
       yfOrigin + 1.25 * secScaleFactor);
   }
 
   sumFormula.style('display:inline-block');
-  sumFormula.style('font-size:1.2em');
+  sumFormula.style('font-size:22px');
 
   let fWidth = Math.trunc(sumFormula.elt.offsetWidth);
   sumFormula.position(xfOrigin - fWidth / 2,

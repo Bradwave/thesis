@@ -20,7 +20,7 @@
 		<div class="slides">
 
 			<!-- SLIDE 1 -->
-			<section class="center" data-transition="zoom-out-soft"
+			<section class="center" data-transition="zoom-in-soft zoom-out-soft"
 				data-background-iframe="https://bradwave.github.io/thesis/animations/s1-animation.html">
 				<h5>LA</h5>
 				<h3>SERIE DI FOURIER</h3>
@@ -38,7 +38,7 @@
 			</section>
 
 			<!-- SLIDE 2 -->
-			<section>
+			<section data-transition="zoom-in-soft">
 				<h4>Obiettivi $ $</h4>
 				<hr>
 				<br><br>
@@ -52,12 +52,12 @@
 				<p>
 					Diciamo <bem class="fragment highlight-blue" fragment-speed="slow"> polinomi trigonometrici </bem>
 					le funzioni del tipo
-				<blockquote>
+				<blockquote class="formula">
 					$$ p(t) = \sum_{n=-N}^N c_n e^{2 i \pi n \textstyle \frac {t}{a}} \ ,$$
-					<div class="number">
+					<div class="number formula">
 						(1.1)
 					</div>
-				</blockquote>
+				</blockquote class="formula">
 				<p class="fragment fade-down">
 					dove $a,t \in \mathbb{R}, \ c_n \in \mathbb{C} $.<br>
 					$ p(t) $ ha periodo $ a $ e grado minore o uguale a $ N $.
@@ -94,9 +94,9 @@
 						Inoltre $(p,e_n)=c_n \Vert e_n \Vert_{2}^{2}=ac_n$, da cui si ricava la
 						<bem class="fragment highlight-blue">formula di Fourier</bem>
 					</p>
-					<blockquote data-id="formula-box">
+					<blockquote class="formula" data-id="formula-box">
 						$$c_n=\frac{1}{a} \int_{0}^{a}p(t)e^{-2 i \pi n \textstyle \frac {t}{a}}dt \ .$$
-						<div class="number">
+						<div class="number formula">
 							(1.2)
 						</div>
 					</blockquote>
@@ -112,9 +112,9 @@
 					<p style="margin-top: 10px;">
 						Se $f \ : \ \mathbb R \ \rightarrow \ \mathbb C$ è una funzione arbitraria di periodo a,<br>
 						possiamo trovare una decomposizione di $f$ della forma
-					<blockquote data-id="formula-box">
+					<blockquote class="formula" data-id="formula-box">
 						$$f(t) = \sum c_n e^{2 i \pi n \textstyle \frac {t}{a}}\ .$$
-						<div class="number">
+						<div class="number formula">
 							(1.3)
 						</div>
 					</blockquote>
@@ -123,7 +123,7 @@
 			</section>
 
 			<!-- Nota storica -->
-			<section class="center" data-transition="zoom-in zoom-out">
+			<section class="center" data-transition="zoom-in-soft zoom-out-soft">
 				<div>
 					<p>
 						In un celebre articolo del 1807, Joseph Fourier afferma che<br>
@@ -168,10 +168,10 @@
 			</section>
 
 			<!-- Approssimazione -->
-			<section>
-				<h4>2.2 L'idea dell'approssimazione $ $</h4>
+			<section data-auto-animate>
+				<h4>2.2 L'idea dell'approssimazione</h4>
 				<hr>
-				<p>
+				<p style="margin-top: -2%;">
 					Dato $N \in \mathbb N$, è possibile trovari dei coefficienti $x_n$ tali che<br>
 					$$ \Vert \ f - \sum_{n=-N}^{N} x_n e_n \ \Vert _{2} \ \text{ sia minimo?}$$
 				<p class="fragment fade-down">
@@ -181,15 +181,21 @@
 					<bem class="fragment highlight-blue">migliore approssimazione</bem>
 					di $f$ in $T_{n}$.<br><br>
 				</p>
-				<p class="fragment fade-down">
+				<p class="fragment fade-down" style="margin-top: -1%;">
 					Occorre quindi valutare la distanza tra $f$ e un arbitrario polinomio trigonometrico in
 					$T_{n}$.<br>
 				</p>
-				<p class="fragment fade-down">
-					Con opportuni calcoli, troviamo
-					$$ \Vert f - p \Vert _{2}^{2} = \Vert f \Vert _{2}^{2}
-					+ a \sum_{n=-N}^{N} ( | c_n - x_n |^{2} - | c_n |^2 ) $$
-				<p class="fragment fade-down">
+				<div class="fragment fade-in">
+					<p>Con opportuni calcoli, troviamo</p>
+					<blockquote class="formula" data-id="block">
+						$$ \Vert f - p \Vert _{2}^{2} = \Vert f \Vert _{2}^{2}
+						+ a \sum_{n=-N}^{N} ( | c_n - x_n |^{2} - | c_n |^2 ) $$
+						<div class="number formula">
+							(2.1)
+						</div>
+					</blockquote>
+				</div>
+				<p class="fragment fade-down" style="margin-top: -1%;">
 					per cui il minimo è ottenuto quando $x_n=c_n$.
 				</p>
 				</p>
@@ -199,32 +205,62 @@
 			<!-- Teorema -->
 			<section data-auto-animate>
 				<div style="margin-top: 4%;">
-					<blockquote style="border-color: #06e96c; width: 80%;" data-id="block">
-						<b style="font-style: normal; font-size: 28px;">2.2.1 Teorema</b><br><br>
-						Esiste un unico polinomio trigonometrico $f_N$ in $T_n$ tale che
-						$$ \Vert f - f_N \Vert _{2} = \min_{p \in T_N} \Vert f - p \Vert _{2} $$
+					<blockquote class="theorem" data-id="block">
+						<div class="fragment fade-down"> <b style="font-style: normal; font-size: 28px;">2.2.1
+								Teorema</b><br><br>
+							<p>
+								Esiste un unico polinomio trigonometrico $f_N$ in $T_n$ tale che
+								$$ \Vert f - f_N \Vert _{2} = \min_{p \in T_N} \Vert f - p \Vert _{2} $$
+							</p>
+						</div>
+
 						<div class="fragment fade-down">
 							Questo polinomio è dato da
 							$$ f_N(t) = \sum_{n=-N}^{N} c_n e^{2 i \pi n \textstyle \frac {t}{a}} \ , $$
-							<div class="number" style="color: #06e96c8c;">
-								(2.1)
+							<div class="number theorem">
+								(2.2)
 							</div>
 						</div>
 						<div class="fragment fade-down">
 							dove
 							$$ c_n=\frac{1}{a} \int_{0}^{a}p(t)e^{2 i \pi n \textstyle \frac {t}{a}}dt \ . $$
-							<div class="number" style="color: #06e96c8c;">
-								(2.2)
+							<div class="number theorem">
+								(2.3)
 							</div>
 						</div>
 					</blockquote>
 				</div>
 			</section>
 
+			<!-- Disuguaglianza di bessel -->
+			<section data-auto-animate>
+				<h4>2.3.1 Disuguaglianza di Bessel $ $</h4>
+				<hr>
+				<p>
+					Dalla <span class="number formula">(2.1)</span>, poichè $x_n=c_n$, si ricava
+				<blockquote class="formula" data-id="block">
+					<div class="fragment fade-down">
+						$$ a \sum_{n= - \infty}^{+ \infty} |c_n|^2 + \Vert f - f_N \Vert _2^2 = \Vert f \Vert _2^2 $$
+						<div class="number formula">
+							(2.4)
+						</div>
+					</div>
+				</blockquote>
+				</p>
+				<div class="fragment fade-down" style="margin-top: 5%;">
+					<p>
+						una cui immediata conseguenza è la seguente disuguaglianza:
+						$$ \sum_{n= - \infty}^{+ \infty} |c_n|^2 \le \frac{1}{a} \int_{0}^{a} |f(t)|^2 dt \ , \ \ \ n
+						\in N \ ,$$
+						nota come <bem class="fragment highlight-blue">disuguaglianza di Bessel</bem>.
+					</p>
+				</div>
+			</section>
+
 			<!-- Corollario -->
 			<section data-auto-animate>
 				<div style="margin-top: 15%;">
-					<blockquote style="border-color: #06e96c; width: 80%;" data-id="block">
+					<blockquote class="theorem" data-id="block">
 						<div class="fragment fade-down">
 							<div style="font-style: normal; font-size: 28px;">
 								<b>2.2.2 Corollario</b>
@@ -244,13 +280,12 @@
 			<!-- Convergenza -->
 			<section data-background-iframe="https://bradwave.github.io/thesis/animations/s4-animation.html"
 				data-preload data-auto-animate>
-				<h4>2.3 Convergenza dell'approssimazione $ $</h4>
+				<h4>2.2.1 Convergenza dell'approssimazione $ $</h4>
 				<hr>
 				<p style="margin-top: -1%;">
 					Cosa succede a $f_N$ per $N \rightarrow + \infty$ ?
 				</p>
-				<blockquote
-					style="border-color: #e9c706; width: 80%; margin-top: 5px; margin-bottom: 5px; position: relative;"
+				<blockquote class="example" style="width: 80%; margin-top: 5px; margin-bottom: 5px; position: relative;"
 					data-id="block">
 					<div class="fragment fade-down" data-fragment-index="2"
 						style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;">
@@ -274,19 +309,20 @@
 			<!-- Teorema -->
 			<section data-auto-animate>
 				<div style="margin-top: 4%;">
-					<blockquote style="border-color: #06e96c; width: 80%;" data-id="block">
+					<blockquote class="theorem" data-id="block">
 						<div class="fragment fade-down">
 							<b style="font-style: normal; font-size: 28px;">
 								2.3.1 Teorema</b>
 						</div>
 						<br>
 						<div class="fragment fade-down">
-							Se $f \in L_{p}^{2}(0,a) \ $, allora la miglior approssimazione di $f$ in $T_N$, che è data
+							Se $f \in L_{p}^{2}(0,a) \ $, allora la miglior approssimazione di $f$ in $T_N$,<br>
+							che è data
 							da
 							$$f_N=\sum_{n=-N}^{N} c_n e^{2 i \pi n \textstyle \frac {t}{a}} \ , $$
-							con i coefficienti $c_N$ dediniti da
-							<span style="font-weight: bold; font-style: normal; color: #06e96c8c;">
-								(2.2)
+							con i coefficienti $c_n$ definiti da
+							<span class="number theorem">
+								(2.3)
 							</span>
 							,
 						</div>
@@ -309,11 +345,11 @@
 				<p>
 					In conclusione, possiamo scrivere
 				</p>
-				<blockquote data-id="block">
+				<blockquote class="formula" data-id="block">
 					<div class="fragment fade-down">
 						$$ f(t) = \sum_{n= - \infty}^{+ \infty} c_n e^{2 i \pi n \textstyle \frac {t}{a}} \ .$$
-						<div class="number">
-							(2.3)
+						<div class="number formula">
+							(2.5)
 						</div>
 					</div>
 				</blockquote>
@@ -325,8 +361,8 @@
 				<hr>
 				<br>
 				<p>La formula
-					<span style="font-weight: bold; font-style: normal; color: #068de9;">
-						(2.2)
+					<span class="number formula">
+						(2.5)
 					</span>
 					è un'equivalenza nella norma di $L_{p}^{2}(0,a)$.<br>
 					In particolare, non significa che per qualunque valore di $t$,<br>
@@ -341,11 +377,58 @@
 				</p>
 			</section>
 
-			<!-- La convergenza puntuale -->
-			<section class="center">
-				<h6>
-					Occorre pertanto
-				</h6>
+			<!-- Uguaglianza di Parseval -->
+			<section data-auto-animate>
+				<h4>2.4 Uguaglianza di Parseval $ $</h4>
+				<hr>
+				<br>
+				<p>
+					L'equazione <span class="number formula">(2.4)</span>
+					e il teorema <span class="number theorem">(2.3.1)</span>
+					implicano
+				</p>
+				<div>
+					<blockquote class="formula" data-id="block">
+						$$ \sum_{n= - \infty}^{+ \infty} |c_n|^2 = \frac{1}{a} \int_{0}^{a} |f(t)|^2 dt \ , $$
+						<div class="number formula">
+							(2.5)
+						</div>
+					</blockquote>
+					<p>
+						nota come <bem class="fragment highlight-blue">uguaglianza di Parseval</bem>.
+					</p>
+				</div>
+			</section>
+
+			<!-- Convergenza puntuale -->
+			<section class="center" data-transition="zoom-in-soft">
+				<div data-fragment-index="0">
+					<p>Occorre discutere ora del problema della</p>
+				</div>
+				<div class="fragment fade-down">
+					<h4>CONVERGENZA PUNTUALE</h4>
+				</div>
+			</section>
+
+			<!-- Teorema di Rieman-Lebesgue -->
+			<section>
+				<div style="margin-top: 15%;">
+					<blockquote class="theorem" data-id="block">
+						<div>
+							<b style="font-style: normal; font-size: 28px;">
+								3.1.1 Teorema (Rieman-Lebesgue)</b>
+						</div>
+						<br>
+						<p>
+							Sia $(a,b)$ un intervallo limitato e sia $f$ integrabile su $(a,b)$.
+						</p>
+						<div class="fragment fade-down" style="margin-top: 20px; margin-bottom: 20px;">
+							Allora l'integrale
+							$$ I_n = \int_{a}^{b}f(x)e^{2i \pi n x} dx $$
+							tende a 0 per $|n| \rightarrow + \infty $ .
+						</div>
+					</blockquote>
+				</div>
 			</section>
 
 		</div>
@@ -367,6 +450,7 @@
 			transition: 'fade',
 			transitionSpeed: 'slow',
 			backgroundTransition: 'fade',
+			backgroundTransitionSpeed: 'slow',
 
 			math: {
 				mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
