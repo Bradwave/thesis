@@ -16,6 +16,7 @@ section.has-light-background, section.has-light-background h1, section.has-light
 body {
   background: #000000;
   background-color: #000000;
+  counter-reset: chapter formula;
 }
 
 .reveal-viewport {
@@ -102,15 +103,31 @@ body {
 }
 
 /*********************************************
- * OTHER
+ * FORMULA NUMBERS
  *********************************************/
 
 .reveal div.number {
   text-align: right;
-  font-size: 0.8em;
   font-weight: bold;
   font-style: normal;
+  font-size: 0.8em;
   color: #ffffffc7;
+}
+
+.reveal div.number.auto {
+  margin-top: -0.8em;
+}
+
+.reveal div.number.auto::after {
+  content: "(" counter(chapter) "." counter(formula) ")";
+}
+
+.reveal div.number.auto.first:after {
+  counter-increment: formula -1;
+}
+
+.reveal div.number.auto.second:after {
+  counter-increment: formula 1;
 }
 
 .reveal div.number.formula {
@@ -120,6 +137,176 @@ body {
 .reveal div.number.theorem {
   color: #06e96c8c;
 }
+
+.reveal new-chapter {
+  visibility: hidden;
+  counter-increment: chapter;
+  counter-reset: formula;
+}
+
+.reveal one-formula {
+  visibility: hidden;
+  counter-increment: formula;
+}
+
+.reveal two-formulas {
+  visibility: hidden;
+  counter-increment: formula 2;
+}
+
+/*********************************************
+ * FORMULA & THEOREM REFERENCE
+ *********************************************/
+
+.reveal span.number {
+  font-weight: bold;
+  font-style: normal;
+  transition: 0.4s;
+}
+
+.reveal span.number.formula {
+  color: #068de9;
+}
+
+.reveal span.number.theorem {
+  color: #06e96cda;
+}
+
+.reveal span.number:hover {
+  text-shadow: 0px 0px 5px;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+/*********************************************
+ * BLOCKQUOTE
+ *********************************************/
+
+.reveal blockquote {
+  font-family: "Latin Modern", serif;
+  font-weight: normal;
+  font-size: 24px;
+  display: block;
+  position: relative;
+  width: 66%;
+  margin: 20px auto;
+  padding: 5px;
+  font-style: italic;
+  border-left: 10px solid #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.reveal blockquote.formula {
+  border-color: #068de9;
+}
+
+.reveal blockquote.theorem {
+  width: 80%;
+  border-color: #06e96c;
+}
+
+.reveal blockquote.example {
+  border-color: #e9c706;
+}
+
+.reveal blockquote p:first-child, .reveal blockquote p:last-child {
+  display: inline-block;
+}
+
+/*********************************************
+ * TOOLTIP
+ *********************************************/
+
+/* Tooltip container */
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+/* Tooltip text */
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  background-color: #0D0D0D;
+  color: #fff;
+  text-shadow: none;
+  text-align: center;
+  padding: 5px 20px;
+  border-left: 10px solid #ffffff;
+  border-radius: 0px;
+  box-shadow: 0px 0px 30px #000000;
+  /* Position the tooltip text */
+  width: auto;
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: all 0.3s ease;
+  cursor: text;
+}
+
+.tooltip .tooltiptext.bottom {
+  top:100%;
+  transform: translate(-50%, 10%);
+}
+
+.tooltip .tooltiptext.top {
+  bottom:100%;
+  transform: translate(-50%, -15%);
+}
+
+.tooltip .tooltiptext.formula {
+  border-left: 10px solid #068de9;
+}
+
+.tooltip .tooltiptext.theorem {
+  border-left: 10px solid #06e96c;
+}
+
+/* Tooltip arrow */
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  /* At the top of the tooltip */
+  left: 50%;
+  margin-left: -10px;
+  border-width: 10px;
+  border-style: solid;
+}
+
+.tooltip .tooltiptext.bottom::after {
+  border-color: transparent transparent #0D0D0D transparent;
+  bottom: 100%;
+}
+
+.tooltip .tooltiptext.top::after {
+  border-color: #0D0D0D transparent transparent transparent;
+  top: 100%;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+
+.tooltip:hover .tooltiptext, .tooltip:active .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltip:hover .tooltiptext.bottom, .tooltip:active .tooltiptext.bottom {
+  transform: translate(-50%, 5%);
+}
+
+.tooltip:hover .tooltiptext.top, .tooltip:active .tooltiptext.top {
+  transform: translate(-50%, -10%);
+}
+
+/*********************************************
+ * OTHER
+ *********************************************/
 
 .reveal textarea {
   display: block;
@@ -206,57 +393,6 @@ body {
 
 .reveal dd {
   margin-left: 40px;
-}
-
-.reveal blockquote {
-  font-family: "Latin Modern", serif;
-  font-weight: normal;
-  font-size: 24px;
-  display: block;
-  position: relative;
-  width: 66%;
-  margin: 20px auto;
-  padding: 5px;
-  font-style: italic;
-  border-left: 10px solid #ffffff;
-  background: rgba(255, 255, 255, 0.05);
-}
-
-.reveal blockquote.formula {
-  border-color: #068de9;
-}
-
-.reveal blockquote.theorem {
-  width: 80%;
-  border-color: #06e96c;
-}
-
-.reveal blockquote.example {
-  border-color: #e9c706;
-}
-
-.reveal blockquote p:first-child, .reveal blockquote p:last-child {
-  display: inline-block;
-}
-
-.reveal span.number {
-  font-weight: bold;
-  font-style: normal;
-  transition: 0.4s;
-}
-
-.reveal span.number.formula {
-  color: #068de9;
-}
-
-.reveal span.number.theorem {
-  color: #06e96c8c;
-}
-
-.reveal span.number:hover {
-  text-shadow: 0px 0px 5px;
-  transition: 0.4s;
-  cursor: pointer;
 }
 
 .reveal q {

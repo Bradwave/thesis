@@ -101,7 +101,6 @@ function updateGraphics() {
     formulas[i].style('font-size:22px');
 
     let fWidth = formulas[i].elt.offsetWidth;
-    console.log('!!', formulas[4].elt.offsetWidth);
     formulas[i].position(xfOrigin + polynomial[i].freq * distance - fWidth / 2,
       yfOrigin + 1.25 * secScaleFactor);
   }

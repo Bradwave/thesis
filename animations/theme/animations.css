@@ -4,24 +4,24 @@
 
 body.animation {
     display: block;
+    overflow: hidden;
     padding: 0;
     margin: 0;
-    overflow: hidden;
     background-color: #000000;
 }
 
 div.formula {
-    margin: auto;
     display: inline-block;
-    text-align: center;
     min-width: 200px;
+    margin: auto;
+    text-align: center;
     color: #FFFFFF;
     font-weight: 300;
     font-size: 1em;
 }
 
-span.number {
-    color: #3aa0e4;
+span.sum-number {
     margin: auto;
     text-align: center;
+    color: #3aa0e4;
 }
