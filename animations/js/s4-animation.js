@@ -26,7 +26,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
 
   formula = select('#sumN');
-  formula.style('font-size:1.2em');
+  formula.style('font-size:1.6vw');
   fIndex = select('#fIndex');
 
   setOrigin(1);

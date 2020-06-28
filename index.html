@@ -21,8 +21,8 @@
 		<div class="slides">
 
 			<!-- SLIDE 1 -->
-			<section class="center" data-transition="zoom-in-soft zoom-out-soft"
-				data-background-iframe="https://bradwave.github.io/thesis/animations/s1-animation.html">
+			<section class="center" id="titolo" data-transition="zoom-in-soft zoom-out-soft"
+				data-background-iframe="https://bradwave.github.io/thesis/animations/s0-animation.html">
 				<h5>LA</h5>
 				<h3>SERIE DI FOURIER</h3>
 				<br>
@@ -39,17 +39,33 @@
 			</section>
 
 			<!-- SLIDE 2 -->
-			<section data-transition="zoom-in-soft">
+			<section data-transition="zoom-in-soft" id="obiettivi"
+				data-background-iframe="https://bradwave.github.io/thesis/animations/s1-animation.html">
 				<h4>Obiettivi $ $</h4>
 				<hr>
-				<br><br>
+				<br>
+				<div class="fragment zoom-dwon">
+					<h4 style="font-size: 28px;">
+						1. Definire la serie di Fourier.
+					</h4>
+				</div>
+				<div class="fragment fade-down">
+					<h4 style="font-size: 28px;">
+						2. Studiarne la convergenza.
+					</h4>
+				</div>
+				<div class="fragment fade-down">
+					<h4 style="font-size: 28px;">
+						3. Rappresentarla.
+					</h4>
+				</div>
 			</section>
 
 			<new-chapter></new-chapter>
 			<one-formula></one-formula>
 
 			<!-- Polinomi trigonometrici -->
-			<section>
+			<section id="polinomi-trigonometrici">
 				<h4>1.1 Polinomi trigonometrici $ $</h4>
 				<hr>
 				<br><br>
@@ -68,19 +84,19 @@
 			</section>
 
 			<section data-background-iframe="https://bradwave.github.io/thesis/animations/s2-animation.html"
-				data-preload>
-				<p class="counter-display"></p>
+				data-preload class="center" id="animazione-polinomi-trigonometrici">
+
 			</section>
 
 			<section data-background-iframe="https://bradwave.github.io/thesis/animations/s3-animation.html"
-				data-preload>
-				<p class="counter-display"></p>
+				data-preload class="center" id="animazione-polinomi-trigonometrici-3d">
+
 			</section>
 
 			<one-formula></one-formula>
 
 			<!-- Spazio Tn e formula di Fourier-->
-			<section data-auto-animate>
+			<section data-auto-animate id="formula-di-fourier">
 				<h4>1.2 Spazio $T_n$</h4>
 				<hr>
 				<p>
@@ -88,7 +104,7 @@
 					di grado minore o uguale a $N$ dotato del prodotto scalare<br>
 					$$(p,q) = \int_{0}^{a} p(t) \overline{q}(t)dt \ ,$$
 				<p class="fragment fade-down">
-					Poichè $(e_n,e_m)=0$ se $n \neq m$, e $\Vert e_n \Vert_2 = \sqrt{a}$ <br>
+					Poiché $(e_n,e_m)=0$ se $n \neq m$, e $\Vert e_n \Vert_2 = \sqrt{a}$ <br>
 					i vettori $e_n$ sono indipendenti e la dimensione dello spazio è $2N+1$.<br>
 				</p>
 				</p>
@@ -108,7 +124,7 @@
 			<one-formula></one-formula>
 
 			<!-- La domanda fondamentale -->
-			<section data-auto-animate>
+			<section data-auto-animate id="domanda-fondamentale">
 				<div style="margin-top: 18%;">
 					<h4>
 						La domanda è:
@@ -118,23 +134,23 @@
 						possiamo trovare una decomposizione di $f$ della forma
 					</p>
 					<blockquote class="formula" data-id="formula-box">
-						$$f(t) = \sum c_n e^{2 i \pi n \textstyle \frac {t}{a}}\ \ \text{?} $$
+						$$f(t) = \sum c_n e^{2 i \pi n \textstyle \frac {t}{a}}\ \ ,$$
 						<div class="number formula auto"></div>
 					</blockquote>
 					<div class="fragment fade-down">
-						<p style="font-size: 20px; opacity: 0.8;">
-							(Sotto minime ipotesi su $f$ )
+						<p>
+							sotto minime ipotesi su $f$ ?
 						</p>
 					</div>
 				</div>
 			</section>
 
 			<!-- Nota storica -->
-			<section class="center" data-transition="zoom-in-soft zoom-out-soft">
+			<section class="center" id="nota-storica" data-transition="zoom-in-soft zoom-out-soft">
 				<div>
 					<p>
 						In un celebre articolo del 1807, Joseph Fourier afferma che<br>
-						la risposta a tale domanda sia
+						la risposta a tale domanda è
 					</p>
 					<p style="font-size: 36px !important; line-height: 2;">
 						<bem class="fragment highlight-blue">"sì"</bem><br>
@@ -148,7 +164,7 @@
 			<new-chapter></new-chapter>
 
 			<!-- Lo spazio L2 -->
-			<section>
+			<section id="spazio-l2">
 				<h4>2.1 Lo spazio $L_{p}^{2}(0,a)$</h4>
 				<hr>
 				<p>
@@ -180,7 +196,7 @@
 			<one-formula></one-formula>
 
 			<!-- Approssimazione -->
-			<section data-auto-animate>
+			<section data-auto-animate id="approssimazione">
 				<h4>2.2 L'idea dell'approssimazione</h4>
 				<hr>
 				<p style="margin-top: -2%;">
@@ -215,7 +231,7 @@
 			<two-formulas></two-formulas>
 
 			<!-- Teorema -->
-			<section data-auto-animate>
+			<section data-auto-animate id="teorema-2-2-1">
 				<div style="margin-top: 6%;">
 					<blockquote class="theorem" data-id="block">
 						<div class="fragment fade-down"> <b style="font-style: normal; font-size: 28px;">2.2.1
@@ -233,7 +249,7 @@
 						</div>
 						<div class="fragment fade-down">
 							dove
-							$$ c_n=\frac{1}{a} \int_{0}^{a}p(t)e^{2 i \pi n \textstyle \frac {t}{a}}dt \ . $$
+							$$ c_n=\frac{1}{a} \int_{0}^{a}f(t)e^{-2 i \pi n \textstyle \frac {t}{a}}dt \ . $$
 							<div class="number theorem auto second"></div>
 						</div>
 					</blockquote>
@@ -243,15 +259,17 @@
 			<one-formula></one-formula>
 
 			<!-- Disuguaglianza di bessel -->
-			<section data-auto-animate>
+			<section data-auto-animate id="bessel">
 				<h4>2.3.1 Disuguaglianza di Bessel $ $</h4>
 				<hr>
 				<p>
-					Dalla <span class="number formula tooltip">(2.1)
-						<span class="tooltiptext formula">
-							$$ \Vert f - p \Vert _{2}^{2} = \Vert f \Vert _{2}^{2}
-							+ a \sum_{n=-N}^{N} ( | c_n - x_n |^{2} - | c_n |^2 ) $$
-						</span></span>, poichè $x_n=c_n$, si ricava
+					Dalla <span class="number formula tooltip bottom">(2.1)
+						<span class="tooltiptext bottom formula">
+							<a href="#/approssimazione">$$ \Vert f - p \Vert _{2}^{2} = \Vert f \Vert _{2}^{2}
+								+ a \sum_{n=-N}^{N} ( | c_n - x_n |^{2} - | c_n |^2 ) $$
+							</a>
+						</span>
+					</span>, poiché $x_n=c_n$, si ricava
 				</p>
 				<blockquote class="formula" data-id="block">
 					<div class="fragment fade-down">
@@ -270,7 +288,7 @@
 			</section>
 
 			<!-- Corollario -->
-			<section data-auto-animate>
+			<section data-auto-animate id="corollario-2-2-2">
 				<div style="margin-top: 15%;">
 					<blockquote class="theorem" data-id="block">
 						<div class="fragment fade-down">
@@ -279,7 +297,7 @@
 							</div>
 							<br>
 							Per qualunque $f \in L_{p}^{2}(0,a) \ $, abbiamo la disuguaglianza
-							$$ \sum_{n=-\infty}^{\infty} |c_n|^{2} \lt \infty \ , $$
+							$$ \sum_{n=-\infty}^{\infty} |c_n|^{2} \lt + \infty $$
 						</div>
 						<div class="fragment fade-down">
 							e quindi
@@ -288,16 +306,24 @@
 					</blockquote>
 					<div class="fragment fade-down">
 						<p style="font-size: 18px; opacity: 0.8;">
-							(Questo è una caso particolare del teorema di Rieman-Lebesgue che, come vedremo in seguito,
-							vale in $L^1$).
+							(Questo è una caso particolare del
+							<span class="number theorem tooltip bottom">teorema di Riemann-Lebesgue
+								<span class="tooltiptext bottom theorem">
+									<a href="#/riemann-lebesgue">
+										$$ I_n = \int_{a}^{b}f(x)e^{2 \pi in x} dx \rightarrow 0 \text{ per } |n|
+										\rightarrow + \infty $$
+									</a>
+								</span>
+							</span> che,
+							come vedremo in seguito, vale in $L^1$).
 						</p>
 					</div>
 				</div>
 			</section>
 
-			<!-- Convergenza -->
+			<!-- Convergenza: esempio animto -->
 			<section data-background-iframe="https://bradwave.github.io/thesis/animations/s4-animation.html"
-				data-preload data-auto-animate>
+				data-preload data-auto-animate id="esempio-animato">
 				<h4>2.2.1 Convergenza dell'approssimazione $ $</h4>
 				<hr>
 				<p style="margin-top: -1%;">
@@ -324,13 +350,14 @@
 				</blockquote>
 			</section>
 
-			<!-- Teorema -->
-			<section data-auto-animate>
+			<!-- Teorema 2.3.1 -->
+			<section data-auto-animate id="teorema-2-3-1">
 				<div style="margin-top: 4%;">
 					<blockquote class="theorem" data-id="block">
 						<div class="fragment fade-down">
 							<b style="font-style: normal; font-size: 28px;">
-								2.3.1 Teorema</b>
+								2.3.1 Teorema
+							</b>
 						</div>
 						<br>
 						<div class="fragment fade-down">
@@ -341,8 +368,10 @@
 							con i coefficienti $c_n$ definiti da
 							<span class="number theorem tooltip top">
 								(2.3)
-								<span class="tooltiptext theorem top">
-									$$ c_n=\frac{1}{a} \int_{0}^{a}p(t)e^{2 i \pi n \textstyle \frac {t}{a}}dt \ $$
+								<span class="tooltiptext top theorem">
+									<a href="#/teorema-2-2-1">
+										$$ c_n=\frac{1}{a} \int_{0}^{a}p(t)e^{-2 i \pi n \textstyle \frac {t}{a}}dt \ $$
+									</a>
 								</span>
 							</span>
 							,
@@ -361,7 +390,7 @@
 			<one-formula></one-formula>
 
 			<!-- Conclusioni -->
-			<section data-auto-animate>
+			<section data-auto-animate id="equivalenza">
 				<h4>2.3 Convergenza dell'approssimazione $ $</h4>
 				<hr>
 				<br><br>
@@ -377,7 +406,7 @@
 			</section>
 
 			<!-- Osservazioni -->
-			<section>
+			<section id="osservazioni">
 				<h4>2.3.1 Osservazioni $ $</h4>
 				<hr>
 				<br>
@@ -385,15 +414,24 @@
 					<span class="number formula tooltip bottom">
 						(2.5)
 						<span class="tooltiptext bottom formula">
-							$$ f(t) = \sum_{n= - \infty}^{+ \infty} c_n e^{2 i \pi n \textstyle \frac {t}{a}} \ .$$
+							<a href="#/equivalenza">
+								$$ f(t) = \sum_{n= - \infty}^{+ \infty} c_n e^{2 i \pi n \textstyle \frac{t}{a}} $$
+							</a>
 						</span>
 					</span>
 					è un'equivalenza nella norma di $L_{p}^{2}(0,a)$.<br>
 					In particolare, non significa che per qualunque valore di $t$,<br>
 					il valore di $f(t)$ sia uguale alla somma della serie.<br>
 				</p>
-				<p class="fragment fade-down" style="margin-top: 3em;">Inoltre, il <strong>teorema 2.3.1</strong> può
-					essere riformulato dicendo che<br>
+				<p class="fragment fade-down" style="margin-top: 3em;">Inoltre, il
+					<span class="number theorem tooltip up">teorema 2.3.1
+						<span class="tooltiptext top theorem">
+							<a href="#/teorema-2-3-1">
+								$$ \int_{0}^{a} |f(t)-f_N(t)|^2 dt \rightarrow 0 \text{ per } N \rightarrow + \infty $$
+							</a>
+						</span>
+					</span>
+					può essere riformulato dicendo che<br>
 					la famiglia di funzioni $(e_n)_{n \in \mathbb{Z}} $ è una <em>base</em>
 					per lo spazio $L_{p}^{2}(0,a)$<br>
 					$$ \text{e che la serie} \ \ \sum_{n= - \infty}^{+ \infty} c_n e_n \ \
@@ -402,21 +440,25 @@
 			</section>
 
 			<!-- Uguaglianza di Parseval -->
-			<section data-auto-animate>
+			<section data-auto-animate id="parseval">
 				<h4>2.4 Uguaglianza di Parseval $ $</h4>
 				<hr>
+				<br>
 				<br>
 				<p>
 					L'equazione <span class="number formula tooltip bottom">(2.4)
 						<span class="tooltiptext bottom formula">
-							$$ a \sum_{n= - \infty}^{+ \infty} |c_n|^2 + \Vert f - f_N \Vert _2^2 = \Vert f
-							\Vert _2^2 $$
+							<a href="#/bessel">$$ a \sum_{n= - \infty}^{+ \infty} |c_n|^2 + \Vert f - f_N \Vert _2^2 =
+								\Vert f
+								\Vert _2^2 $$</a>
 						</span>
 					</span>
 					e il <span class="number theorem tooltip bottom">teorema 2.3.1<span
 							class="tooltiptext bottom theorem">
-							$$ \int_{0}^{a} |f(t)-f_N(t)|^2 dt \rightarrow 0 \text{ per } N \rightarrow + \infty $$
-						</span></span>
+							<a href="#/teorema-2-3-1">$$ \int_{0}^{a} |f(t)-f_N(t)|^2 dt \rightarrow 0 \text{ per } N
+								\rightarrow + \infty $$</a>
+						</span>
+					</span>
 					implicano
 				</p>
 				<div>
@@ -432,25 +474,103 @@
 				</div>
 			</section>
 
-			<!-- Convergenza puntuale -->
-			<section class="center" data-transition="zoom-in-soft">
-				<div data-fragment-index="0">
-					<p>Occorre discutere ora del problema della</p>
-				</div>
-				<div class="fragment fade-down">
-					<h4>CONVERGENZA PUNTUALE</h4>
+			<new-chapter></new-chapter>
+
+			<!-- Computazione numeriche e convergenza -->
+			<section class="center" id="computazioni-numeriche" data-transition="zoom-in-soft">
+				<div style="margin-top: 2em;">
+					<p style="line-height: 1.8em;">
+						Poiché una funzione impiegata in computazioni numeriche<br>
+						è necessariamente valutata solo in un
+						<bem class="fragment highlight-blue">numero finito</bem> di punti,
+					</p>
+					<p style="margin-top: 1em;">
+						è importante determinare se la formula
+						<span class="number formula tooltip bottom">(2.5)
+							<span class="tooltiptext bottom formula">
+								<a href="#/equivalenza">
+									$$ f(t) = \sum_{n= - \infty}^{+ \infty} c_n e^{2 i \pi n \textstyle \frac {t}{a}}$$
+								</a>
+							</span>
+						</span>
+						possa esprimere <br>
+						un'<bem class="fragment highlight-blue">equivalenza</bem> ad un dato punto $t$.
+					</p>
 				</div>
 			</section>
 
-			<new-chapter></new-chapter>
+			<!-- Convergenza puntuale -->
+			<section class="center" id="convergenza-puntuale" data-transition="zoom-in-soft zoom-out-soft">
+				<div>
+					<p>Questo è il problema della</p>
+					<div class="fragment fade-down">
+						<h4>CONVERGENZA PUNTUALE</h4>
+					</div>
+				</div>
+			</section>
 
-			<!-- Teorema di Rieman-Lebesgue -->
-			<section>
-				<div style="margin-top: 15%;">
+			<!-- Estensione a L1 -->
+			<section id="estensione-l1">
+				<h4>3.1 Estensione a $L^1_p(0,a)$</h4>
+				<hr>
+				<p>
+					Dalla la caratterizzazione dell'<bem class="fragment highlight-blue">integrale di Lebesgue</bem>
+					$$f \text{ è Lebesgue-integrabile su } I \ \iff \ \int_{I}|f(t)|dt \lt +\infty$$
+				</p>
+				<div class="fragment fade-down">
+					<p>
+						segue immediatamente che i
+						<span class="number tooltip top">coefficienti di Fourier
+							<span class="tooltiptext top theorem">
+								<a href="#/teorema-2-2-1">
+									$$ c_n=\frac{1}{a} \int_{0}^{a}f(t)e^{-2 i \pi n \textstyle \frac {t}{a}}dt $$
+								</a>
+							</span>
+						</span>
+						<br>esistono se e solo se $f$ è integrabile su $(0,a)$.
+					</p>
+				</div>
+				<div class="fragment fade-down" style="margin-top: 20px;">
+					<p>
+						Introduciamo la notazione
+						$$L_{p}^{1}(0,a) = \left\{ f : \mathbb R \longrightarrow \mathbb C \ : \
+						f \text{ ha periodo $a$ e } \int_{0}^{a}|f(t)|dt \lt -\infty \right\} \ .$$
+					</p>
+					<p style="margin-top: 10px;">
+						Notiamo che $L_p^2(0,a) \subset L_p^1(0,a)$,<br>
+						quindi $f \in L_p^1(0,a)$ è una condizione meno restrittiva di $f \in L_p^2(0,a)$.
+					</p>
+				</div>
+			</section>
+
+			<!-- Convergenza dei coefficienti -->
+			<section id="Convergenza-coefficienti">
+				<h4>3.2 Convergenza dei coefficienti $c_n$</h4>
+				<hr>
+				<br>
+				<p>
+					Al momento non sappiamo se la serie $\sum_{n=-\infty}^{+\infty}c_n(f)e^{2\pi in\frac{t}{a}}$
+					converga<br>
+					e, in caso di convergenza, non conosciamo il valore del limite.
+				</p>
+				<div class="fragment fade-down" style="margin-top: 8%;">
+					<p>
+						Una <bem class="fragment highlight-blue">condizione necessaria</bem> ma non sufficiente è che
+						$$c_n \rightarrow 0 \text{ per } |n| \rightarrow + \infty \ .$$
+						Avevamo verificato questa proprietà per $f \in L_p^2(0,a)$<br>
+						e rimane vera anche per $f \in L_p^1(0,a)$.
+					</p>
+				</div>
+			</section>
+
+			<!-- Teorema di Riemann-Lebesgue -->
+			<section class="center" id="riemann-lebesgue">
+				<div>
 					<blockquote class="theorem" data-id="block">
 						<div>
 							<b style="font-style: normal; font-size: 28px;">
-								3.1.1 Teorema (Rieman-Lebesgue)</b>
+								Teorema di Riemann-Lebesgue
+							</b>
 						</div>
 						<br>
 						<p>
@@ -458,11 +578,367 @@
 						</p>
 						<div class="fragment fade-down" style="margin-top: 20px; margin-bottom: 20px;">
 							Allora l'integrale
-							$$ I_n = \int_{a}^{b}f(x)e^{2i \pi n x} dx $$
+							$$ I_n = \int_{a}^{b}f(x)e^{2 \pi in x} dx $$
 							tende a 0 per $|n| \rightarrow + \infty $ .
 						</div>
 					</blockquote>
 				</div>
+			</section>
+
+			<!-- Funzioni continue a tratti -->
+			<section id="continuità-a-tratti">
+				<h4>3.3 Funzioni continue a tratti su $[a,b]$</h4>
+				<hr>
+				<br>
+				<p>
+					Diciamo che una funzione $f:[a,b] \longrightarrow \mathbb{C}$ è
+					<bem class="fragment highlight-blue">continua a tratti</bem> su $[a,b]$<br>
+					se è continua su $[a,b]$ eccetto in un numero finito di punti<br>
+					e se i limiti destro e sinistro esistono e sono finiti in questi punti.
+				</p>
+				<br>
+				<div class="fragment fade-down">
+					<p>
+						Tali limiti sono definiti da
+					</p>
+					<blockquote class="formula">
+						$$f(t+) = \lim\limits_{h \to 0^+}f(t+h) \ ,$$
+						$$f(t-) = \lim\limits_{h \to 0^-}f(t+h) \ .$$
+					</blockquote>
+				</div>
+			</section>
+
+			<!-- Funzioni a variazione limitata -->
+			<section data-auto-animate id="variazione-limitata">
+				<h4>3.4 Funzioni a variazione limitata su $[a,b]$</h4>
+				<hr>
+				<br>
+				<p>
+					Diciamo che una funzione $f$ è a
+					<bem class="fragment highlight-blue">variazione limitata</bem> su $[a,b]$<br>
+				</p>
+				<div class="fragment fade-down">
+					<p>
+						se esiste un $M \in \mathbb{R}$ tale che
+						$$\sum_{k=0}^{n}|f(t_{k+1})-f(t_{k}))| \lt M$$
+						per ogni suddivisione $a=t_0 \lt t_1 \lt ... \lt t_{n+1}=b$ con $n \in \mathbb{N}$ arbitrario.
+					</p>
+				</div>
+				<div class="fragment fade-in" style="margin-top: 40px;">
+					<blockquote class="theorem" data-id="block" style="width: auto;">
+						$$ \text{Se $f$ è a variazione limitata su $[a,b]$}
+						\Longrightarrow \begin{cases}
+						\text{$f$ è Riemann-integrabile su [a,b] e} \\
+						\text{$f(t-)$ e $f(t+)$ esistono $\forall t \in (a,b)$}
+						\end{cases} $$
+					</blockquote>
+				</div>
+			</section>
+
+			<!-- Teorema di Dirichlet -->
+			<section data-auto-animate id="dirichlet">
+				<div style="margin-top: 16%;">
+					<blockquote class="theorem" data-id="block">
+						<div class="fragment fade-down">
+							<b style="font-style: normal; font-size: 28px;">
+								Teorema di Dirichlet
+							</b>
+						</div>
+						<br>
+						<p class="fragment fade-down">
+							Sia $f \in L^1_p(0,a)$. Se esistono i limiti $f(t+)$ e $f(t-)$ in un punto $t_0$<br>
+							ed esistono le derivate destra e sinistra in $t_0$, allora<br>
+							$$f_N(t_0) \rightarrow \frac{1}{2} \big[ f(t_0+) + f(t_0-) \big]
+							\ \text{ per } \ N \rightarrow +\infty \ .$$
+						</p>
+						<div class="fragment fade-down">
+							<p>
+								Se inoltre $f$ è continua in $t_0$, $f_N(t_0) \rightarrow f(t_0)$.
+							</p>
+						</div>
+						<br>
+					</blockquote>
+				</div>
+			</section>
+
+			<!-- Risultato globale -->
+			<section id="risultato-globale">
+				<div class="fragment fade-down" data-fragment-index="2"
+					style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; margin-top: 14%;">
+					<blockquote class="theorem" data-id="block">
+						<div>
+							<b style="font-style: normal; font-size: 28px;">
+								3.4.1 Teorema
+							</b>
+						</div>
+						<br>
+						<p>
+							Sia $f : \mathbb{R} \longrightarrow \mathbb{C}$ una funzione
+							a variazione limitata di periodo $a$.<br>
+							Allora valgono i seguenti risultati:
+						</p>
+						<div class="fragment fade-down" data-fragment-index="3" style="margin-top: 25px;">
+							<p>
+								1. per ogni $t_0 \in \mathbb{R}$,
+								$f_N(t_0) \rightarrow \frac{1}{2} \big[ f(t_0+) + f(t_0-) \big] \ \text{ per } \ |n|
+								\rightarrow +\infty$;
+							</p>
+
+						</div>
+						<div class="fragment fade-down" data-fragment-index="4" style="margin-top: 25px;">
+							<p>
+								2. se $f$ è continua su un intervallo chiuso e limitato $[\alpha, \beta]$,<br>
+								allora $f_N$ converge uniformemente a $f$ in $[\alpha, \beta]$.
+							</p>
+						</div>
+						<br>
+					</blockquote>
+				</div>
+				<div class="fragment fade-out" data-fragment-index="2"
+					style="position: relative; margin-left: auto; margin-right: auto; left: 0; right: 0; margin-top: 26%;">
+					<p>
+						Questo risultato mostra che la convergenza della serie di Fourier di $f$ in un punto $t_0$<br>
+						dipende esclusivamente dal comportamento di $f$ in un intorno di $t_0$.
+					</p>
+					<div class="fragment fade-down" data-fragment-index="0" style="margin-top: 20px;">
+						<p>
+							Vale anche un
+							<bem class="fragment highlight-blue" data-fragment-index="1">
+								risultato globale
+							</bem>.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- Convergenza uniforme -->
+			<section data-auto-animate id="convergenza-uniforme">
+				<h4>3.5 Convergenza uniforme $ $</h4>
+				<hr>
+				<p style="margin-top: 60px;">
+					Per $f \in L^2_p(0,a)$ avevamo visto che $ \sum_{n=-\infty}^{\infty} |c_n|^{2} \lt + \infty $.
+				</p>
+				<p style="font-size: 18px; margin-top: 5px;">
+					(<span class="number theorem tooltip top">Corollario 2.2.2
+						<span class="tooltiptext top theorem">
+							<a href="#/corollario-2-2-2">
+								$$ \sum_{n=-\infty}^{\infty} |c_n|^{2} \lt + \infty $$
+							</a>
+						</span>
+					</span>)
+				</p>
+				<div class="fragment fade-down">
+					<p>
+						Affinché $ \sum_{n=-\infty}^{\infty} |c_n| \lt + \infty $
+						dobbiamo scegliere $f \in C^1_p(0,a) $.
+					</p>
+				</div>
+				<div class="fragment fade-down" style="margin-top: 40px;">
+					<p>
+						Ciò implica che $(f_N)$ sia una successione di Cauchy nella norma uniforme su $[0,a]$<br>
+						e quindi su $\mathbb{R}$. Allora $f_N$ converge uniformemente su $\mathbb{R}$ a una qualche
+						funzione $g$.
+					</p>
+				</div>
+				<div class="fragment fade-down" style="margin-top: 40px;">
+					<p>
+						Poiché la convergenza uniforme implica la convergenza nella norma di $L^2_p(0,a)$,<br>
+						segue dal <span class="number theorem tooltip top">teorema 2.3.1<span
+								class="tooltiptext top theorem">
+								<a href="#/teorema-2-3-1">$$ \int_{0}^{a} |f(t)-f_N(t)|^2 dt \rightarrow 0 \text{ per }
+									N
+									\rightarrow + \infty $$</a>
+							</span>
+						</span> e dall'unicità del limite che $f=g$ quasi ovunque.
+					</p>
+				</div>
+				<div class="fragment fade-in">
+					<p>
+						Ma $f$ e $g$ sono continue, quindi
+					</p>
+					<blockquote class="formula" data-id="block" style="line-height: 2;">
+						<p style="margin-bottom: 20px;">
+							$f=g$ ovunque.
+						</p>
+					</blockquote>
+				</div>
+			</section>
+
+			<!-- Proposizione 3.5.1 -->
+			<section data-auto-animate id="Proposizione-3-5-1">
+				<div style="margin-top: 16%;">
+					<blockquote class="theorem" data-id="block">
+						<div class="fragment fade-down">
+							<b style="font-style: normal; font-size: 28px;">
+								Proposizione 3.5.1
+							</b>
+						</div>
+						<br>
+						<div class="fragment fade-down">
+							<p>
+								Se $f \in L^2_p(0,a)$ e i sui coefficienti di Fourier soddisfano
+								$$ \sum_{n=-\infty}^{\infty} |c_n| \lt + \infty \ ,$$
+							</p>
+						</div>
+						<div class="fragment fade-down">
+							<p>
+								allora $f$ è uguale q.o. ad una funzione continua $\tilde f$<br>
+								e la serie di Fourier di $f$ converge uniformemente a $\tilde f$ su $\mathbb{R}$.
+							</p>
+						</div>
+						<br>
+					</blockquote>
+				</div>
+			</section>
+
+			<!-- Animazioni finali 1 -->
+			<section class="center" id="animazioni-finali-1" data-transition="zoom-in-soft zoom-out-soft">
+				<div class="fragment zoom-in" data-fragment-index="1"
+					style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;">
+					<p>
+						La prima mette in evidenza,<br>
+						tramite la scomposizione di $f(t)$ in $f(t)=u(t)+iv(t)$,<br>
+						la continuità di $f$ e la sua appartenenza a $L^1_p(0,a)$.
+					</p>
+				</div>
+				<div class="fragment fade-out" data-fragment-index="1"
+					style="position: relative; margin-left: auto; margin-right: auto; left: 0; right: 0;">
+					<p>
+						In chiusura, vengono proposte due<br>
+						<bem class="fragment highlight-blue" data-fragment-index="0">animazioni riassuntive</bem><br>
+						che riguardano un <bem>peculiare esempio</bem>.
+					</p>
+				</div>
+			</section>
+
+			<!-- Scomposizione -->
+			<section id="scomposizione">
+				penultima animazione
+			</section>
+
+			<!-- Animazioni finali 2 -->
+			<section class="center" id="animazioni-finali-2" data-transition="zoom-in-soft zoom-out-soft">
+				<p>
+					La seconda, la più importante di tutta la presentazione,<br>
+					mostra la convergenza puntuale alla funzione $f$ della sua serie di Fourier.
+				</p>
+				<div class="fragment fade-down" style="margin-top: 20px;">
+					<p>
+						È inoltre visibile lo <bem class="fragment highlight-blue">spettro</bem>
+						del segnale periodico $f$,<br>
+						definito dall'insieme di coppie $(n/a,c_n), \ n \in \mathbb{Z}$<br>
+						dove $c_n$ è l'$n$-esimo coefficiente di Fourier di $f$.
+					</p>
+				</div>
+			</section>
+
+			<!-- Serie di Fourier -->
+			<section id="serie-di-fourier">
+				ultima animazione
+			</section>
+
+			<new-chapter></new-chapter>
+			<one-formula></one-formula>
+
+			<!-- Curve di Bezier -->
+			<section data-auto-animate id="curve-di-bezier">
+				<h4>4.1 Curve di Bézier e polybézier $ $</h4>
+				<hr>
+				<p>
+					Definiamo <bem class="fragment highlight-blue">curva di Bézier cubica</bem>
+					la curva di parametrizzazione
+				</p>
+				<blockquote class="formula" data-id="block" style="width: auto;">
+					$$\mathbf{B}(t)=\mathbf{P}_0(1-t)^3+3\mathbf{P}_1t(1-t)^2+2\mathbf{P}_2t^2(1-t)+\mathbf{P}_3t^3
+					\ , \ \ t \in [0,1] \ .$$
+					<div class="number formula auto"></div>
+				</blockquote>
+				<div class="fragment fade-down" style="margin-top: 10px;">
+					<p>
+						La figura precedente è stata rappresentata mediante una
+						<bem class="fragment highlight-blue">polybézier</bem>,<br>
+					</p>
+				</div>
+				<div class="fragment fade-down">
+					<p>
+						ovvero una concatenazione di $M \in \mathbb{N}$ curve di Bézier<br>
+						$\mathbf{B}^j(t), \ t \in [0,1], \
+						j=0,...,M-1 $, in questo caso cubiche, tali che $\mathbf{B}^j(1)=\mathbf{B}^{j+1}(0)$.
+					</p>
+				</div>
+			</section>
+
+			<one-formula></one-formula>
+
+			<!-- Trasformata discreta di Fourier -->
+			<section data-auto-animate id="trasformata-discreta-di-fourier">
+				<h4>4.2 Trasformata discreta di Fourier $ $</h4>
+				<hr>
+				<p>
+					Non potendo calcolare i
+					<span class="number tooltip top">coefficienti di Fourier
+						<span class="tooltiptext top theorem">
+							<a href="#/teorema-2-2-1">
+								$$ c_n=\frac{1}{a} \int_{0}^{a}f(t)e^{-2 i \pi n \textstyle \frac {t}{a}}dt $$
+							</a>
+						</span>
+					</span>
+					con l'integrale,<br>
+					una loro approssimazione è stata ottenuta con la
+					<bem class="fragment highlight-blue">trasformata discreta di Fourier</bem>:
+				</p>
+				<blockquote class="formula" data-id="block">
+					$$c'_n=\frac{1}{N}\sum_{k=0}^{N-1}y_{k}e^{-2\pi in\frac{k}{N}} \ .$$
+					<div class="number formula auto"></div>
+				</blockquote>
+				<div class="fragment fade-down" style="margin-top: 40px;">
+					<p style="font-size: 20px;">
+						Applicando questo risultato ad una polybézier chiusa<br>
+						e composta da $M$ curve di
+						Bézier cubiche $\mathbf{B}^j(t), \ t \in [0,1], \ j=0,...,M-1$, si ottiene:
+					</p>
+				</div>
+				<div class="fragment fade-down">
+					<p style="font-size: 20px;">
+						$$ c'_n=\frac{1}{M\cdot N'}\sum_{j=0}^{M-1}\sum_{k=0}^{N'-1}\mathbf{B}^{j}
+						\bigg(\frac{k}{N'}\bigg)e^{-2\pi in \textstyle \frac{j\cdot N'+ k}{M\cdot N}} $$
+						dove $N'$ è il numero di punti campionati<br>
+						per ogni curva di Bézier che compone la polybébezier.
+					</p>
+				</div>
+			</section>
+
+			<!-- Implementazione -->
+			<section class="center" id="implementazione" data-transition="zoom-in-soft">
+				<p>
+					Implementazione in <i>javascript</i>
+				</p>
+				<pre data-id="code-animation"><code class="javascript" data-trim data-line-numbers="1|2-3|5|6|7-11|12|14-16|18|21">
+						function dft(y) {
+							const Y = [];
+							const N = y.length;
+							for (let n = 0; n < N; n++) {
+							  let sum = new Complex(0, 0);
+							  for (let k = 0; k < N; k++) {
+								const phi = (- TWO_PI * k * n) / N;
+								const c = new Complex(cos(phi), sin(phi));
+								sum.add(y[k].mult(c));
+							  }
+							  sum = sum.div(N);
+							  let freq = n;
+							  let amp = sum.amp();
+							  let phase = sum.phase();	  
+							  Y[n] = { freq, amp, phase };
+							}
+							return Y;
+						}
+				</code></pre>
+			</section>
+
+			<!-- Bibliografia -->
+			<section id="bibliografia">
+				<h4>Bibliografia $ $</h4>
+				<hr>
 			</section>
 
 		</div>

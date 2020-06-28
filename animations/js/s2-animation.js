@@ -74,12 +74,14 @@ function scrollIncrement(inc) {
   if (newPos < - SCROLL_INC && newPos > - SCROLL_INC * (maxStep + 1)) {
     pos = newPos;
     step = Math.trunc(Math.abs(pos / SCROLL_INC));
-    updateGraphics();
   } else if (newPos >= - SCROLL_INC) {
     pos = - SCROLL_INC;
+    step = 1;
   } else if (newPos <= - SCROLL_INC * (maxStep + 1)) {
     pos = - SCROLL_INC * (maxStep + 1);
+    step = maxStep;
   }
+  updateGraphics();
 }
 
 /**
@@ -93,7 +95,7 @@ function updateGraphics() {
   // formulas
   for (let i = 0; i < step; i++) {
     formulas[i].style('display:inline-block;');
-    formulas[i].style('font-size:22px');
+    formulas[i].style('font-size:1.6vw');
 
     let fWidth = formulas[i].elt.offsetWidth;
     formulas[i].position(x2Origin + polynomial[i].freq * distance - fWidth / 2,
@@ -105,7 +107,7 @@ function updateGraphics() {
 
   if (step > 1) {
     sumFormula.sum.style('display:inline-block');
-    sumFormula.sum.style('font-size:22px')
+    sumFormula.sum.style('font-size:1.6vw')
     sumFormula.maxIndex.html(`${Math.trunc(step / 2)}`);
 
     let fWidth = Math.trunc(sumFormula.sum.elt.offsetWidth);
