@@ -170,7 +170,7 @@
 				<p>
 					Introduciamo la notazione
 					$$L_{p}^{2}(0,a) = \left\{ f \ : \ \mathbb R \ \rightarrow \ \mathbb C \ : \
-					f \ \text{ ha periodo $a$ e } \int_{0}^{a}|f(t)|^2dt \lt -\infty \right\}$$
+					f \ \text{ ha periodo $a$ e } \int_{0}^{a}|f(t)|^2dt \lt +\infty \right\}$$
 				<p class="fragment fade-down">
 					Questo insieme, dotato delle usuali operazioni, è uno
 					<bem class="fragment highlight-blue">spazio vettoriale</bem>.<br>
@@ -200,7 +200,7 @@
 				<h4>2.2 L'idea dell'approssimazione</h4>
 				<hr>
 				<p style="margin-top: -2%;">
-					Dato $N \in \mathbb N$, è possibile trovari dei coefficienti $x_n$ tali che<br>
+					Dato $N \in \mathbb N$, è possibile trovare dei coefficienti $x_n$ tali che<br>
 					$$ \Vert \ f - \sum_{n=-N}^{N} x_n e_n \ \Vert _{2} \ \text{ sia minimo?}$$
 				<p class="fragment fade-down">
 					Ciò corrisponde a trovare l'elemento $f_N$ nel sottospazio $T_n$ di $L_{p}^{2}(0,a)$
@@ -263,8 +263,8 @@
 				<h4>2.3.1 Disuguaglianza di Bessel $ $</h4>
 				<hr>
 				<p>
-					Dalla <span class="number formula tooltip bottom">(2.1)
-						<span class="tooltiptext bottom formula">
+					Dalla <span class="number formula tooltip top">(2.1)
+						<span class="tooltiptext top formula">
 							<a href="#/approssimazione">$$ \Vert f - p \Vert _{2}^{2} = \Vert f \Vert _{2}^{2}
 								+ a \sum_{n=-N}^{N} ( | c_n - x_n |^{2} - | c_n |^2 ) $$
 							</a>
@@ -306,7 +306,7 @@
 					</blockquote>
 					<div class="fragment fade-down">
 						<p style="font-size: 18px; opacity: 0.8;">
-							(Questo è una caso particolare del
+							(Questo è un caso particolare del
 							<span class="number theorem tooltip bottom">teorema di Riemann-Lebesgue
 								<span class="tooltiptext bottom theorem">
 									<a href="#/riemann-lebesgue">
@@ -446,15 +446,15 @@
 				<br>
 				<br>
 				<p>
-					L'equazione <span class="number formula tooltip bottom">(2.4)
-						<span class="tooltiptext bottom formula">
+					L'equazione <span class="number formula tooltip top">(2.4)
+						<span class="tooltiptext top formula">
 							<a href="#/bessel">$$ a \sum_{n= - \infty}^{+ \infty} |c_n|^2 + \Vert f - f_N \Vert _2^2 =
 								\Vert f
 								\Vert _2^2 $$</a>
 						</span>
 					</span>
-					e il <span class="number theorem tooltip bottom">teorema 2.3.1<span
-							class="tooltiptext bottom theorem">
+					e il <span class="number theorem tooltip top">teorema 2.3.1<span
+							class="tooltiptext top theorem">
 							<a href="#/teorema-2-3-1">$$ \int_{0}^{a} |f(t)-f_N(t)|^2 dt \rightarrow 0 \text{ per } N
 								\rightarrow + \infty $$</a>
 						</span>
@@ -514,7 +514,7 @@
 				<h4>3.1 Estensione a $L^1_p(0,a)$</h4>
 				<hr>
 				<p>
-					Dalla la caratterizzazione dell'<bem class="fragment highlight-blue">integrale di Lebesgue</bem>
+					Dalla caratterizzazione dell'<bem class="fragment highlight-blue">integrale di Lebesgue</bem>
 					$$f \text{ è Lebesgue-integrabile su } I \ \iff \ \int_{I}|f(t)|dt \lt +\infty$$
 				</p>
 				<div class="fragment fade-down">
@@ -534,7 +534,7 @@
 					<p>
 						Introduciamo la notazione
 						$$L_{p}^{1}(0,a) = \left\{ f : \mathbb R \longrightarrow \mathbb C \ : \
-						f \text{ ha periodo $a$ e } \int_{0}^{a}|f(t)|dt \lt -\infty \right\} \ .$$
+						f \text{ ha periodo $a$ e } \int_{0}^{a}|f(t)|dt \lt +\infty \right\} \ .$$
 					</p>
 					<p style="margin-top: 10px;">
 						Notiamo che $L_p^2(0,a) \subset L_p^1(0,a)$,<br>
@@ -679,7 +679,7 @@
 						</p>
 						<div class="fragment fade-down" data-fragment-index="3" style="margin-top: 25px;">
 							<p>
-								1. per ogni $t_0 \in \mathbb{R}$,
+								1. $ \forall \ t_0 \in \mathbb{R}$,
 								$f_N(t_0) \rightarrow \frac{1}{2} \big[ f(t_0+) + f(t_0-) \big] \ \text{ per } \ |n|
 								\rightarrow +\infty$;
 							</p>
@@ -776,7 +776,7 @@
 						<br>
 						<div class="fragment fade-down">
 							<p>
-								Se $f \in L^2_p(0,a)$ e i sui coefficienti di Fourier soddisfano
+								Se $f \in L^2_p(0,a)$ e i suoi coefficienti di Fourier soddisfano
 								$$ \sum_{n=-\infty}^{\infty} |c_n| \lt + \infty \ ,$$
 							</p>
 						</div>
@@ -911,7 +911,7 @@
 			<!-- Implementazione -->
 			<section class="center" id="implementazione" data-transition="zoom-in-soft">
 				<p>
-					Implementazione in <i>javascript</i>
+					Implementazione in <i>javascript</i>:
 				</p>
 				<pre data-id="code-animation"><code class="javascript" data-trim data-line-numbers="1|2-3|5|6|7-11|12|14-16|18|21">
 						function dft(y) {
