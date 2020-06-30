@@ -82,7 +82,6 @@ function preload() {
 function setup() {
   createCanvas(windowWidth, windowHeight);
   polColor = color(66, 175, 250);
-  // drawingContext.shadowColor = polColor;
   frameRate(30);
 
   setOrigin(1, MAX_SPECTRUM_FREQ * 2);
@@ -246,10 +245,7 @@ function drawPolynomial() {
 
   strokeWeight(8);
   stroke(polColor);
-  // drawingContext.shadowBlur = 20;
   point(ps.x, ps.y);
-  // drawingContext.shadowBlur = 0;
-
 }
 
 function draw() {
@@ -261,21 +257,6 @@ function draw() {
   stroke(0);
   text("FPS: " + fps.toFixed(2), 10, height - 10);
 
-  /* *
-  // MAIN AXIS
-  noFill();
-  stroke(50);
-  strokeWeight(1);
-  
-  // x axis
-  line(xOrigin - scaleFactor * 1.5, yOrigin, xOrigin + scaleFactor * 1.5, yOrigin);
-  // y axis
-  line(xOrigin, yOrigin - scaleFactor * 1.5, xOrigin, yOrigin + scaleFactor * 1.5);
-
-  rect(xOrigin, yOrigin, scaleFactor, scaleFactor);
-  /* */
-
-  /* */
   // SPECTRUM
   strokeWeight(3);
   for (let n = 0; n < maxFreq; n++) {
@@ -293,7 +274,6 @@ function draw() {
     text(n + 1, x2Origin + spXOffset, y2Origin + spFontSize);
     text(- n - 1, x2Origin - spXOffset, y2Origin + spFontSize);
   }
-  /* */
 
   if (updateTimer > 0) {
     updateTimer--;
@@ -314,18 +294,6 @@ function draw() {
   let barProgr = pos / MAX_POS;
   drawProgressBar(barProgr);
   drawMouseIcon(barProgr, t);
-
-  /* IMAGE *
-  beginShape();
-  noFill();
-  stroke(100);
-  strokeWeight(1);
-  for (let k = 0; k < sampledPoints.length; k++) {
-    let testPoint = toScreenCoord(sampledPoints[k].re, sampledPoints[k].im);
-    vertex(testPoint.x, testPoint.y)
-  }
-  endShape();
-  /* */
 
   t += dt;
 
