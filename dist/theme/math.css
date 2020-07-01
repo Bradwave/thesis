@@ -502,6 +502,49 @@ body {
 }
 
 /*********************************************
+ * BUTTON
+ *********************************************/
+
+.reveal button.link {
+  width: auto;
+  height: auto;
+  padding: 10px 16px;
+  vertical-align: middle;
+  background-color: #000000;
+  color: #ffffff;
+  font-family: "Latin Modern";
+  letter-spacing: 2px;
+  font-size: large;
+  border: solid #ffffff;
+  transition: all 0.5s ease-in-out;
+  outline: none;
+}
+
+.reveal button.link:hover {
+  color: #068de9;
+  border: solid #068de9;
+  outline: none;
+  cursor: pointer;
+}
+
+.reveal button.link:active {
+  outline: none;
+}
+
+.reveal button.link a {
+  transition: all 0.5s ease-in-out;
+}
+
+.reveal button.link:hover a {
+  color: #068de9;
+  text-shadow: none;
+}
+
+.reveal button.link:active a {
+  text-shadow: 0 0 10px #068de9;
+}
+
+/*********************************************
  * IMAGES
  *********************************************/
 
@@ -515,6 +558,7 @@ body {
 .reveal section img.plain {
   border: 0;
   box-shadow: none;
+  background-color: #00000000;
 }
 
 .reveal a img {

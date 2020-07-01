@@ -5,6 +5,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
+	<link rel="icon" type="image/png" href="images/fourier-logo.png">
+
 	<title>La serie di Fourier</title>
 
 	<link rel="stylesheet" href="dist/reset.css">
@@ -801,8 +803,8 @@
 					<div class="fragment fade-down" style="margin-top: 20px;">
 						<p>
 							È inoltre visibile lo <bem class="fragment highlight-blue">spettro</bem>
-							del segnale periodico $f$,<br>
-							definito dall'insieme di coppie $(n/a,c_n), \ n \in \mathbb{Z}$<br>
+							delle ampiezze del segnale periodico $f$,<br>
+							definito dall'insieme di coppie $(n/a,|c_n|), \ n \in \mathbb{Z}$<br>
 							dove $c_n$ è l'$n$-esimo coefficiente di Fourier di $f$.
 						</p>
 					</div>
@@ -865,6 +867,9 @@
 						j=0,...,M-1 $, in questo caso cubiche, tali che $\mathbf{B}^j(1)=\mathbf{B}^{j+1}(0)$.
 					</p>
 				</div>
+				<div class="fragment fade-down">
+					<img class="plain" src="images/polybezier.png" alt="" style="width: 60%; margin-top: -15px;">
+				</div>
 			</section>
 
 			<one-formula></one-formula>
@@ -908,11 +913,14 @@
 			</section>
 
 			<!-- Implementazione -->
-			<section class="center" id="implementazione" data-transition="zoom-in-soft">
+			<section id="implementazione">
+				<h4>4.2 Trasformata discreta di Fourier $ $</h4>
+				<hr>
 				<p>
-					Implementazione in <i>javascript</i>:
+					Implementazione in <em>JavaScript</em>:
 				</p>
-				<pre data-id="code-animation"><code class="javascript" data-trim data-line-numbers="1|2-3|5|6|7-11|12|14-16|18|21">
+				<div class="fragment fade-down">
+					<pre data-id="code-animation"><code class="javascript" data-trim data-line-numbers="1|2-3|5|6|7-11|12|14-16|18|21">
 						function dft(y) {
 							const Y = [];
 							const N = y.length;
@@ -932,12 +940,112 @@
 							return Y;
 						}
 				</code></pre>
+				</div>
+			</section>
+
+			<!-- Relazione -->
+			<section class="center" id="relazione" data-transition="zoom-in-soft zoom-out-soft"
+				data-background-iframe="https://bradwave.github.io/thesis/animations/s0-animation.html">
+				<h4 style="font-size: 30px">
+					RELAZIONE COMPLETA
+				</h4>
+				<button class="link">
+					<a href="https://bradwave.github.io/report/" target="_blank" style="font-weight: 800;">LEGGI</a>
+				</button>
 			</section>
 
 			<!-- Bibliografia -->
 			<section id="bibliografia">
 				<h4>Bibliografia $ $</h4>
 				<hr>
+				<br>
+				<div style="letter-spacing: 1px;">
+					<ol style="list-style-type: decimal">
+						<li>
+							C. Gasquet e P. Witomksi, <em>Fourier Analysis and Applications</em>, 1<sup>a</sup> ed., New
+							York, NY, Springer, 1999.
+						</li>
+						<li>
+							3Blue1Brown, <a href="www.youtube.com/watch?v=r6sGWTCMz2k" target="_blank"><em>But what is a
+									Fourier series?
+									From heat flow to circle drawings</em></a>, su <a class="biblio"
+								href="https://www.youtube.com" target="_blank">YouTube</a>, 2019.
+						</li>
+						<li>
+							Pomax, <a href="https://pomax.github.io/bezierinfo/#polybezier" target="_blank"><em>A Primer
+									on Bézier
+									Curves</em></a>, su <a href="https://github.com/" target="_blank">github.com</a>,
+							accesso nel 2020.
+						</li>
+						<li>
+							W. Rudin, <em>Real and Complex Analysis</em>, Singapore, McGraw Hill Book Co, 1987.</li>
+						<li>E. Oran Briigham, <em>The FFT and its Applications</em>, Englewood Clifs, Prentice-Hall,
+							1988.
+						</li>
+						<li>
+							S. W. Smith, <em>The Scientist and Engineer’s Guide to Digital Signal Processing</em>,
+							California Technical Pub, 1997.
+						</li>
+						<li>
+							O. Byrne, <em>The First Six Books of Euclid</em>, Londra, William Pickering, 1847.
+						</li>
+					</ol>
+				</div>
+			</section>
+
+			<!-- Documentazioni -->
+			<section id="docmunetazioni">
+				<h4>Documentazioni $ $</h4>
+				<hr>
+				<br>
+				<div style="letter-spacing: 1px;">
+					<ol start="8" style="list-style-type: decimal">
+						<li>
+							<em>p5.js</em>, su <a href="https://p5js.org" target="_blank">p5js.org</a>
+						</li>
+						<li>
+							<em>reveal.js</em>, su <a href="https://revealjs.com" target="_blank">revealjs.com</a>
+						</li>
+						<li>
+							<em>Complex.js</em>, su <a href="https://github.com/infusion/Complex.js"
+								target="_blank">github.com/infusion/Complex.js/</a>
+						</li>
+						<li>
+							<em>MathJax</em>, su <a href="https://www.mathjax.org/" target="_blank">www.mathjax.org</a>
+						</li>
+						<li>
+							<a href="https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference"
+								target="_blank"><em>MathJax
+									basic tutorial and quick reference</em></a>, su <a class="biblio"
+								href="https://math.meta.stackexchange.com/"
+								target="_blank">math.meta.stackexchange.com/</a>
+						</li>
+						<li>
+							Y. Xie, <a href="https://bookdown.org/yihui/bookdown/" target="_blank"><em>Bookdown:
+									Authoring Books and
+									Technical Documents with R Markdown</em></a>, 2020.
+						</li>
+						<li>
+							Y. Xie, <em>Bookdown: Authoring Books and Technical Documents with R Markdown</em>, Boca
+							Raton, Florida, Chapman e Hall/CRC, 2016
+						</li>
+						<li>Y. Xie, J. J. Allaire e G. Grolemund, <em>R markdown: The definitive guide</em>, Boca
+							Raton, Florida, Chapman e Hall/CRC, 2018.
+						</li>
+					</ol>
+				</div>
+			</section>
+
+			<section class="center" data-transition="zoom-in-soft">
+				<img class="plain" src="images/fourier-logo-outline.png" alt="" style="width: 10%;">
+				<div class="fragment fade-down">
+					<p style="font-size: 14px; letter-spacing: 2px; font-weight: bold; margin-left: 3px;">
+						LA SERIE DI
+					</p>
+					<p style="font-weight: 600; letter-spacing: 1px; margin-left: 9px; margin-top: -16px;">
+						Fourier<span style="color: #068de9; font-size: 40px;">.</span>
+					</p>
+				</div>
 			</section>
 
 		</div>
