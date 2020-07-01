@@ -7,6 +7,10 @@ _Università degli Studi di Torino_
 CANDIDATO: _Matteo Bramardi_<br>
 RELATORE: _Prof. Paolo Boggiatto_
 
+<img src="https://bradwave.github.io/thesis/images/fourier-logo.png" alt="fourier" width="180">
+
+## Introduzione
+
 L'idea per l'argomento della tesi nasce dal video [_But what is a Fourier series? From heat flow to circle drawings_](https://www.youtube.com/watch?v=r6sGWTCMz2k) pubblicato su YouTube da Grant Sanderson, noto come [_**3Blue1Brown**_](https://www.youtube.com/c/3blue1brown). Rimasto colpito dal fascino estetico delle animazioni e dalla loro squisita immediatezza, ho deciso di approfondirne i fondamenti teorici.
 
 Il cuore della tesi è la **presentazione** che, oltre ad una dissertazione teorica del tema, ripropone le suddette **animazioni**, da me ricreate ed adattate. La presentazione è affinata per agevolarne la comprensione attraverso l'**interazione** con diversi suoi elementi e aspira ad essere un esempio di applicazione delle tecnologie informatiche a fini didattici.
