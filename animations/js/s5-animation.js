@@ -23,7 +23,7 @@ let progr;
 
 // SPECTRUM
 const MAX_SPECTRUM_FREQ = 20;
-let maxFreq;
+let maxFreq = 1;
 
 // UPDATE TIMER
 let updateTimer = 0;
@@ -252,10 +252,12 @@ function draw() {
 
   background(0);
 
+  /* FPS COUNTER *
   let fps = frameRate();
   fill(255);
   stroke(0);
   text("FPS: " + fps.toFixed(2), 10, height - 10);
+  /* */
 
   // SPECTRUM
   strokeWeight(3);
