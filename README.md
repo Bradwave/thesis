@@ -9,6 +9,8 @@ RELATORE: _Prof. Paolo Boggiatto_
 
 <img src="https://bradwave.github.io/thesis/images/fourier-logo.png" alt="fourier" width="180">
 
+Presentazione: [bradwave.github.io/thesis](https://bradwave.github.io/thesis)
+
 ## Introduzione
 
 L'idea per l'argomento della tesi nasce dal video [_But what is a Fourier series? From heat flow to circle drawings_](https://www.youtube.com/watch?v=r6sGWTCMz2k) pubblicato su YouTube da Grant Sanderson, noto come [_**3Blue1Brown**_](https://www.youtube.com/c/3blue1brown). Rimasto colpito dal fascino estetico delle animazioni e dalla loro squisita immediatezza, ho deciso di approfondirne i fondamenti teorici.
